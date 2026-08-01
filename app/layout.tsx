@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Vazirmatn, Figtree } from "next/font/google";
 import "./globals.css";
+import Header from "@/shared/components/layout/header";
+import { Footer } from "@/shared/components/layout/footer";
 
 const figtree = Figtree({
   display: "swap",
@@ -44,8 +46,10 @@ export default function RootLayout({
       dir="rtl"
       className={`dark ${vazirmatn.variable} ${figtree.variable}`}
     >
-      <body className="min-h-screen grid grid-rows-[80px_1fr_auto]">
+      <body className="min-h-screen grid grid-rows-[80px_1fr_auto] bg-background text-foreground">
+        <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
