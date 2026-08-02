@@ -64,7 +64,7 @@
   /* Brand */
 
   --primary: var(--color-forest-700);
-  --primary-foreground: #F9F6EE;
+  --primary-foreground: #f9f6ee;
 
   --secondary: var(--color-forest-600);
   --secondary-foreground: #f8f8f2;

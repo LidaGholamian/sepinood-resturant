@@ -8,11 +8,11 @@ export function HomeHero() {
   return (
     <section className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden">
       <Image
-        src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=2400&q=80"
+        src="/images/vegBowl.png"
         alt="بشقاب سالاد گیاهی تازه با سبزیجات رنگارنگ"
         fill
         priority
-        sizes="100vw"
+        sizes="50vw"
         className="object-cover animate-[hero-zoom_18s_ease-out_forwards]"
       />
 
