@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Vazirmatn, Figtree } from "next/font/google";
 import "./globals.css";
-import Header from "@/shared/components/layout/header";
+import { Navbar } from "@/shared/components/layout/navbar";
 import { Footer } from "@/shared/components/layout/footer";
 
 const figtree = Figtree({
@@ -44,10 +44,10 @@ export default function RootLayout({
   return (
     <html
       dir="rtl"
-      className={`dark ${vazirmatn.variable} ${figtree.variable}`}
+      className={`${vazirmatn.variable} ${figtree.variable}`}
     >
-      <body className="min-h-screen grid grid-rows-[80px_1fr_auto] bg-background text-foreground">
-        <Header />
+      <body className="min-h-screen grid grid-rows-[auto_1fr_auto] bg-background text-foreground">
+        <Navbar />
         <main>{children}</main>
         <Footer />
       </body>
