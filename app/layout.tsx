@@ -20,7 +20,7 @@ const vazirmatn = Vazirmatn({
 
 export const metadata: Metadata = {
   title: {
-    default: "Sepinood | Vegan Restaurant",
+    default: "رستوران گیاهی سپینود - سفارش آنلان غذا",
     template: "%s | Sepinood",
   },
   description:

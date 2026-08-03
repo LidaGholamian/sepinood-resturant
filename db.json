@@ -1,0 +1,52 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "Burgers"
+    },
+    {
+      "id": "2",
+      "name": "Salads"
+    },
+    {
+        "id": "3",
+        "name": "Pizza"
+    },
+    {
+        "id": "4",
+        "name": "Pasta"
+    }
+  ],
+
+  "menuItems": [
+    {
+      "id": "1",
+      "name": "Green Burger",
+      "description": "برگر گیاهی با سس مخصوص و سبزیجات تازه",
+      "price": 250000,
+      "image": "/images/menu/green-burger.jpg",
+      "category": "Burger",
+      "ingredients": [
+        "Vegan Patty",
+        "Lettuce",
+        "Tomato",
+        "Special Sauce"
+      ],
+      "isAvailable": true
+    },
+    {
+      "id": "2",
+      "name": "Avocado Salad",
+      "description": "سالاد آووکادو با سبزیجات تازه",
+      "price": 180000,
+      "image": "/images/menu/avocado-salad.jpg",
+      "category": "Salad",
+      "ingredients": [
+        "Avocado",
+        "Lettuce",
+        "Olive Oil"
+      ],
+      "isAvailable": true
+    }
+  ]
+}

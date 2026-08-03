@@ -8,7 +8,7 @@ export function HomeHero() {
   return (
     <section className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden mx-28 my-8 rounded-3xl">
       <Image
-        src="/images/veganFood.webp"
+        src="/images/veganFood.png"
         alt="بشقاب سالاد گیاهی تازه با سبزیجات رنگارنگ"
         fill
         priority
@@ -20,15 +20,15 @@ export function HomeHero() {
       <div className="relative z-10 flex min-h-[calc(100svh-5rem)] items-center">
         <div className="container mx-auto px-4 py-16 md:px-6 md:py-24">
           <div className="max-w-xl space-y-6 text-cream-100 md:space-y-8">
-            <p className="text-4xl font-extrabold tracking-tight opacity-0 animate-[fadeIn_0.8s_ease_forwards] md:text-6xl lg:text-7xl">
+            <p className="text-4xl font-extrabold tracking-tight opacity-0 animate-[fadeIn_0.8s_ease_forwards] md:text-6xl lg:text-7xl drop-shadow-[0_3px_14px_rgba(0,0,0,1)]">
               سپینود
             </p>
 
-            <h1 className="text-2xl font-bold leading-relaxed opacity-0 animate-[fadeIn_0.8s_ease_0.15s_forwards] md:text-4xl md:leading-snug">
+            <h1 className="text-2xl font-bold leading-relaxed opacity-0 animate-[fadeIn_0.8s_ease_0.15s_forwards] md:text-4xl md:leading-snug drop-shadow-[0_3px_14px_rgba(0,0,0,1)]">
               طعم تازهٔ گیاهی، از مزرعه تا میز شما
             </h1>
 
-            <p className="max-w-md text-base leading-8 text-primary-foreground/85 opacity-0 animate-[fadeIn_0.8s_ease_0.3s_forwards] md:text-lg">
+            <p className="max-w-md text-base leading-8 text-primary-foreground/85 opacity-0 animate-[fadeIn_0.8s_ease_0.3s_forwards] md:text-lg text-shadow-2xl text-shadow-neutral-800 drop-shadow-[0_2px_12px_rgba(0,0,0,1)]">
               منوی کاملاً گیاهی سپینود را ببینید و سفارش آنلاین خود را در چند
               دقیقه ثبت کنید.
             </p>
@@ -38,7 +38,7 @@ export function HomeHero() {
                 href="/menu"
                 className={cn(
                   buttonVariants({ size: "lg" }),
-                  "h-12 bg-ivory-50 px-6 text-base text-forest-800 hover:bg-ivory-50/90",
+                  "bg-forest-700 hover:bg-forest-800 text-cream-50 font-semibold rounded-lg px-8 py-4 shadow-xl shadow-black/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl",
                 )}
               >
                 مشاهده منو
@@ -47,7 +47,7 @@ export function HomeHero() {
                 href="/menu"
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
-                  "h-12 border-primary-foreground/40 bg-transparent px-6 text-base text-primary-foreground hover:bg-primary-foreground/50 hover:text-forest-600",
+                  "bg-cream-100/80 border border-foreground/50 text-forest-600 font-semibold rounded-lg px-8 py-4 transition-all duration-300 hover:bg-hero-text hover:border-hero-text hover:-translate-y-0.5",
                 )}
               >
                 سفارش آنلاین
