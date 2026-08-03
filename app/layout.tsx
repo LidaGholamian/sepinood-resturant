@@ -20,11 +20,11 @@ const vazirmatn = Vazirmatn({
 
 export const metadata: Metadata = {
   title: {
-    default: "GreenBite | Vegan Restaurant",
-    template: "%s | GreenBite",
+    default: "Sepinood | Vegan Restaurant",
+    template: "%s | Sepinood",
   },
   description:
-    "GreenBite is a modern vegan restaurant where you can explore delicious plant-based meals, place online orders, and enjoy healthy food delivered to your door.",
+    "Sepinood is a modern vegan restaurant where you can explore delicious plant-based meals, place online orders, and enjoy healthy food delivered to your door.",
   keywords: [
     "Vegan Restaurant",
     "Vegetarian",
@@ -42,10 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      dir="rtl"
-      className={`${vazirmatn.variable} ${figtree.variable}`}
-    >
+    <html dir="rtl" className={`${vazirmatn.variable} ${figtree.variable}`}>
       <body className="min-h-screen grid grid-rows-[auto_1fr_auto] bg-background text-foreground">
         <Navbar />
         <main>{children}</main>
