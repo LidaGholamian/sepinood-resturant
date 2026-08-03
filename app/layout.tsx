@@ -3,6 +3,7 @@ import { Vazirmatn, Figtree } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/shared/components/layout/navbar";
 import { Footer } from "@/shared/components/layout/footer";
+import { Providers } from "./providers";
 
 const figtree = Figtree({
   display: "swap",
@@ -45,7 +46,9 @@ export default function RootLayout({
     <html dir="rtl" className={`${vazirmatn.variable} ${figtree.variable}`}>
       <body className="min-h-screen grid grid-rows-[auto_1fr_auto] bg-background text-foreground">
         <Navbar />
-        <main>{children}</main>
+
+        <Providers>{children}</Providers>
+
         <Footer />
       </body>
     </html>
