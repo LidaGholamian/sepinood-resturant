@@ -21,10 +21,10 @@
   "menuItems": [
     {
       "id": "1",
-      "name": "Green Burger",
-      "description": "برگر گیاهی با سس مخصوص و سبزیجات تازه",
+      "name": "BB Burger",
+      "description": "برگر گیاهی باربیکیو با سس مخصوص و سبزیجات تازه",
       "price": 250000,
-      "image": "/images/menu/green-burger.jpg",
+      "image": "/images/food/bb-burger.webp",
       "category": "Burger",
       "ingredients": [
         "Vegan Patty",
@@ -36,11 +36,179 @@
     },
     {
       "id": "2",
-      "name": "Avocado Salad",
-      "description": "سالاد آووکادو با سبزیجات تازه",
+      "name": "vegan salami",
+      "description": "ساندویچ وگان سالامی",
       "price": 180000,
-      "image": "/images/menu/avocado-salad.jpg",
-      "category": "Salad",
+      "image": "/images/food/salami.webp",
+      "category": "Burger",
+      "ingredients": [
+        "Avocado",
+        "Lettuce",
+        "Olive Oil"
+      ],
+      "isAvailable": true
+    },
+    {
+      "id": "3",
+      "name": "Tofo",
+      "description": "ساندویچ توفو گریل با قارچ",
+      "price": 190000,
+      "image": "/images/food/tofo.webp",
+      "category": "Burger",
+      "ingredients": [
+        "Avocado",
+        "Lettuce",
+        "Olive Oil"
+      ],
+      "isAvailable": true
+    },
+    {
+      "id": "4",
+      "name": "sosis",
+      "description": "ساندویچ سوسیس وگان",
+      "price": 150000,
+      "image": "/images/food/sosis.webp",
+      "category": "Burger",
+      "ingredients": [
+        "Avocado",
+        "Lettuce",
+        "Olive Oil"
+      ],
+      "isAvailable": true
+    },
+    {
+      "id": "5",
+      "name": "american pizza",
+      "description": "پیتزا سبزیجات امریکایی",
+      "price": 650000,
+      "image": "/images/food/american.webp",
+      "category": "Pizza",
+      "ingredients": [
+        "Avocado",
+        "Lettuce",
+        "Olive Oil"
+      ],
+      "isAvailable": true
+    },
+    {
+      "id": "6",
+      "name": "american peperoni",
+      "description": "پیتزا پپرونی امریکایی",
+      "price": 650000,
+      "image": "/images/food/peperoni.webp",
+      "category": "Pizza",
+      "ingredients": [
+        "Avocado",
+        "Lettuce",
+        "Olive Oil"
+      ],
+      "isAvailable": true
+    },
+    {
+      "id": "7",
+      "name": "italian",
+      "description": "پیتزا پپرونی ایتالیایی",
+      "price": 850000,
+      "image": "/images/food/italian.webp",
+      "category": "Pizza",
+      "ingredients": [
+        "Avocado",
+        "Lettuce",
+        "Olive Oil"
+      ],
+      "isAvailable": true
+    },
+    {
+      "id": "8",
+      "name": "special",
+      "description": "پیتزا مخصوص ایتالیایی",
+      "price": 980000,
+      "image": "/images/food/special.webp",
+      "category": "Pizza",
+      "ingredients": [
+        "Avocado",
+        "Lettuce",
+        "Olive Oil"
+      ],
+      "isAvailable": true
+    },
+    {
+      "id": "9",
+      "name": "alferedo",
+      "description": "پاستا آلفردو",
+      "price": 580000,
+      "image": "/images/food/alferedo.webp",
+      "category": "Pasta",
+      "ingredients": [
+        "Avocado",
+        "Lettuce",
+        "Olive Oil"
+      ],
+      "isAvailable": true
+    },
+    {
+      "id": "10",
+      "name": "marita",
+      "description": "پاستا ماریتا",
+      "price": 6200000,
+      "image": "/images/food/marita.webp",
+      "category": "Pasta",
+      "ingredients": [
+        "Avocado",
+        "Lettuce",
+        "Olive Oil"
+      ],
+      "isAvailable": true
+    },
+    {
+      "id": "11",
+      "name": "orbita",
+      "description": "پاستا اربیتا",
+      "price": 780000,
+      "image": "/images/food/orbita.webp",
+      "category": "Pasta",
+      "ingredients": [
+        "Avocado",
+        "Lettuce",
+        "Olive Oil"
+      ],
+      "isAvailable": true
+    },
+    {
+      "id": "12",
+      "name": "avocado",
+      "description": "سالاد آواکادو",
+      "price": 780000,
+      "image": "/images/food/avocado.webp",
+      "category": "Salads",
+      "ingredients": [
+        "Avocado",
+        "Lettuce",
+        "Olive Oil"
+      ],
+      "isAvailable": true
+    },
+    {
+      "id": "13",
+      "name": "greenmix",
+      "description": "سالاد گرین میکس",
+      "price": 360000,
+      "image": "/images/food/greenmix.webp",
+      "category": "Pasta",
+      "ingredients": [
+        "Avocado",
+        "Lettuce",
+        "Olive Oil"
+      ],
+      "isAvailable": true
+    },
+    {
+      "id": "14",
+      "name": "killsezar",
+      "description": "سالاد کیل سزار",
+      "price": 780000,
+      "image": "/images/food/killsezar.webp",
+      "category": "Pasta",
       "ingredients": [
         "Avocado",
         "Lettuce",
