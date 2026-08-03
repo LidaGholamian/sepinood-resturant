@@ -19,11 +19,6 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -40,19 +35,12 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --radius-sm: var(--radius-sm);
-  --radius-md: var(--radius-md);
-  --radius-lg: var(--radius-lg);
-  --radius-xl: var(--radius-xl);
-  --radius-2xl: var(--radius-2xl);
-  --radius-3xl: var(--radius-3xl);
-  --radius-4xl: var(--radius-full);
 }
 
 :root {
   /* Layout */
 
-  --background: var(--color-ivory-50);
+  --background: var(--color-forest-600);
   --foreground: var(--color-neutral-900);
 
   --card: var(--color-forest-600);

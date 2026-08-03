@@ -6,24 +6,20 @@ import { cn } from "@/shared/lib/utils";
 
 export function HomeHero() {
   return (
-    <section className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden">
+    <section className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden mx-28 my-8 rounded-3xl">
       <Image
-        src="/images/vegBowl.png"
+        src="/images/veganFood.webp"
         alt="بشقاب سالاد گیاهی تازه با سبزیجات رنگارنگ"
         fill
         priority
         sizes="50vw"
         className="object-cover animate-[hero-zoom_18s_ease-out_forwards]"
       />
-
-      <div
-        className="absolute inset-0 bg-gradient-to-l from-forest-950/80 via-forest-900/55 to-forest-900/25"
-        aria-hidden
-      />
+      <div className="absolute inset-0 bg-forest-950/20" />
 
       <div className="relative z-10 flex min-h-[calc(100svh-5rem)] items-center">
         <div className="container mx-auto px-4 py-16 md:px-6 md:py-24">
-          <div className="max-w-xl space-y-6 text-primary-foreground md:space-y-8">
+          <div className="max-w-xl space-y-6 text-cream-100 md:space-y-8">
             <p className="text-4xl font-extrabold tracking-tight opacity-0 animate-[fadeIn_0.8s_ease_forwards] md:text-6xl lg:text-7xl">
               سپینود
             </p>
@@ -51,7 +47,7 @@ export function HomeHero() {
                 href="/menu"
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
-                  "h-12 border-primary-foreground/40 bg-transparent px-6 text-base text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground",
+                  "h-12 border-primary-foreground/40 bg-transparent px-6 text-base text-primary-foreground hover:bg-primary-foreground/50 hover:text-forest-600",
                 )}
               >
                 سفارش آنلاین
