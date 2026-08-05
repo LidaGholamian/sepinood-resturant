@@ -1,20 +1,27 @@
 "use client";
 
+import { useMemo } from "react";
+
 import { MenuCard } from "@/features/menu/components/MenuCard";
 import { useMenu } from "@/features/menu/hook/use-menu";
-import { MenuProps } from "../types/menu.types";
+import type { MenuProps } from "@/features/menu/types/menu-props.types";
 
 export function Menu({ activeCategory }: MenuProps) {
-  const { data: items = [], isPending, isError, error } = useMenu();
+  const { data, isPending, isError, error } = useMenu();
+  const items = Array.isArray(data) ? data : [];
 
-  const filteredItems = activeCategory
-    ? items.filter((item) => item.categoryId === activeCategory)
-    : items;
+  const filteredItems = useMemo(
+    () =>
+      activeCategory
+        ? items.filter((item) => item.categoryId === activeCategory)
+        : items,
+    [items, activeCategory],
+  );
 
   if (isPending) {
     return (
       <div
-        className="flex min-h-48 items-center justify-center text-sm text-muted-foreground"
+        className="flex min-h-48 items-center justify-center text-sm text-ivory-50/80"
         role="status"
         aria-live="polite"
       >
@@ -26,7 +33,7 @@ export function Menu({ activeCategory }: MenuProps) {
   if (isError) {
     return (
       <div
-        className="flex min-h-48 items-center justify-center text-center text-sm text-destructive"
+        className="flex min-h-48 items-center justify-center text-center text-sm text-red-200"
         role="alert"
       >
         {error instanceof Error
@@ -36,16 +43,16 @@ export function Menu({ activeCategory }: MenuProps) {
     );
   }
 
-  if (items.length === 0) {
+  if (filteredItems.length === 0) {
     return (
-      <div className="flex min-h-48 items-center justify-center text-sm text-muted-foreground">
+      <div className="flex min-h-48 items-center justify-center text-sm text-ivory-50/80">
         آیتمی در منو یافت نشد.
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto grid grid-cols-1 gap-5 px-4 py-8 sm:grid-cols-2 sm:gap-6 sm:px-6 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4 xl:gap-7">
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-2 xl:grid-cols-3">
       {filteredItems.map((item) => (
         <MenuCard key={item.id} item={item} />
       ))}

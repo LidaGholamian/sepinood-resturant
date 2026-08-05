@@ -1,4 +1,10 @@
 export { Menu } from "./components/Menu";
 export { MenuCard } from "./components/MenuCard";
+export { CategoryTabs } from "./components/category-tabs";
+export { useMenu } from "./hook/use-menu";
+export { useCategories } from "./hook/use-categories";
 export type { MenuItem } from "./types/menu.types";
 export type { MenuCardProps } from "./types/menu-card.types";
+export type { MenuProps } from "./types/menu-props.types";
+export type { Category } from "./types/category.types";
+export type { CategoryTabsProps } from "./types/category-tabs.types";

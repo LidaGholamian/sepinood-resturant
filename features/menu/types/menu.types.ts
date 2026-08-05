@@ -8,7 +8,3 @@ export type MenuItem = {
   ingredients: string[];
   isAvailable: boolean;
 };
-
-export interface MenuProps {
-  activeCategory: string;
-}
