@@ -4,7 +4,11 @@ export type MenuItem = {
   description: string;
   price: number;
   image: string;
-  category: string;
+  categoryId: string;
   ingredients: string[];
   isAvailable: boolean;
 };
+
+export interface MenuProps {
+  activeCategory: string;
+}

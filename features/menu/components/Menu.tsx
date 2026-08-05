@@ -2,9 +2,14 @@
 
 import { MenuCard } from "@/features/menu/components/MenuCard";
 import { useMenu } from "@/features/menu/hook/use-menu";
+import { MenuProps } from "../types/menu.types";
 
-export function Menu() {
+export function Menu({ activeCategory }: MenuProps) {
   const { data: items = [], isPending, isError, error } = useMenu();
+
+  const filteredItems = activeCategory
+    ? items.filter((item) => item.categoryId === activeCategory)
+    : items;
 
   if (isPending) {
     return (
@@ -41,7 +46,7 @@ export function Menu() {
 
   return (
     <div className="container mx-auto grid grid-cols-1 gap-5 px-4 py-8 sm:grid-cols-2 sm:gap-6 sm:px-6 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4 xl:gap-7">
-      {items.map((item) => (
+      {filteredItems.map((item) => (
         <MenuCard key={item.id} item={item} />
       ))}
     </div>

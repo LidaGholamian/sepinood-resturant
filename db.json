@@ -1,19 +1,19 @@
 {
   "categories": [
     {
-      "id": "1",
+      "categoryId": "1",
       "name": "Burgers"
     },
     {
-      "id": "2",
+      "categoryId": "2",
       "name": "Salads"
     },
     {
-        "id": "3",
+        "categoryId": "3",
         "name": "Pizza"
     },
     {
-        "id": "4",
+        "categoryId": "4",
         "name": "Pasta"
     }
   ],
@@ -25,7 +25,7 @@
       "description": "برگر گیاهی باربیکیو با سس مخصوص و سبزیجات تازه",
       "price": 250000,
       "image": "/images/food/bb-burger.webp",
-      "category": "Burger",
+      "categoryId": "1",
       "ingredients": [
         "Vegan Patty",
         "Lettuce",
@@ -40,7 +40,7 @@
       "description": "ساندویچ وگان سالامی",
       "price": 180000,
       "image": "/images/food/salami.webp",
-      "category": "Burger",
+      "categoryId": "1",
       "ingredients": [
         "Avocado",
         "Lettuce",
@@ -54,7 +54,7 @@
       "description": "ساندویچ توفو گریل با قارچ",
       "price": 190000,
       "image": "/images/food/tofo.webp",
-      "category": "Burger",
+      "categoryId": "1",
       "ingredients": [
         "Avocado",
         "Lettuce",
@@ -68,7 +68,7 @@
       "description": "ساندویچ سوسیس وگان",
       "price": 150000,
       "image": "/images/food/sosis.webp",
-      "category": "Burger",
+      "categoryId": "1",
       "ingredients": [
         "Avocado",
         "Lettuce",
@@ -82,7 +82,7 @@
       "description": "پیتزا سبزیجات امریکایی",
       "price": 650000,
       "image": "/images/food/american.webp",
-      "category": "Pizza",
+      "categoryId": "3",
       "ingredients": [
         "Avocado",
         "Lettuce",
@@ -96,7 +96,7 @@
       "description": "پیتزا پپرونی امریکایی",
       "price": 650000,
       "image": "/images/food/peperoni.webp",
-      "category": "Pizza",
+      "categoryId": "3",
       "ingredients": [
         "Avocado",
         "Lettuce",
@@ -110,7 +110,7 @@
       "description": "پیتزا پپرونی ایتالیایی",
       "price": 850000,
       "image": "/images/food/italian.webp",
-      "category": "Pizza",
+      "categoryId": "3",
       "ingredients": [
         "Avocado",
         "Lettuce",
@@ -124,7 +124,7 @@
       "description": "پیتزا مخصوص ایتالیایی",
       "price": 980000,
       "image": "/images/food/special.webp",
-      "category": "Pizza",
+      "categoryId": "3",
       "ingredients": [
         "Avocado",
         "Lettuce",
@@ -138,7 +138,7 @@
       "description": "پاستا آلفردو",
       "price": 580000,
       "image": "/images/food/alferedo.webp",
-      "category": "Pasta",
+      "categoryId": "4",
       "ingredients": [
         "Avocado",
         "Lettuce",
@@ -152,7 +152,7 @@
       "description": "پاستا ماریتا",
       "price": 620000,
       "image": "/images/food/marita.webp",
-      "category": "Pasta",
+      "categoryId": "4",
       "ingredients": [
         "Avocado",
         "Lettuce",
@@ -166,7 +166,7 @@
       "description": "پاستا اربیتا",
       "price": 780000,
       "image": "/images/food/orbita.webp",
-      "category": "Pasta",
+      "categoryId": "4",
       "ingredients": [
         "Avocado",
         "Lettuce",
@@ -180,7 +180,7 @@
       "description": "سالاد آواکادو",
       "price": 780000,
       "image": "/images/food/avocado.webp",
-      "category": "Salads",
+      "categoryId": "2",
       "ingredients": [
         "Avocado",
         "Lettuce",
@@ -194,7 +194,7 @@
       "description": "سالاد گرین میکس",
       "price": 360000,
       "image": "/images/food/greenmix.webp",
-      "category": "Pasta",
+      "categoryId": "2",
       "ingredients": [
         "Avocado",
         "Lettuce",
@@ -208,7 +208,7 @@
       "description": "سالاد کیل سزار",
       "price": 780000,
       "image": "/images/food/killsezar.webp",
-      "category": "Pasta",
+      "categoryId": "2",
       "ingredients": [
         "Avocado",
         "Lettuce",
