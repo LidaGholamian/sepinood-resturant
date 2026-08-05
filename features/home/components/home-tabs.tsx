@@ -19,11 +19,11 @@ export function HomeTabs() {
   return (
     <section className="container mx-auto px-4 py-14 sm:px-6">
       <div className="grid gap-6 lg:grid-cols-[1fr_300px] xl:grid-cols-[1fr_320px]">
-        <div className="min-w-0 space-y-4 bg-forest-700 rounded-xl px-4">
+        <div className="min-w-0 space-y-4 bg-forest-700 rounded-xl">
           <div
             role="tablist"
             aria-label="بخش‌های صفحه"
-            className="inline-flex h-11 gap-1 rounded-sm bg-forest-700 p-1 text-neutral-100"
+            className="inline-flex h-11 gap-1 rounded-t-xl overflow-hidden rounded-sm bg-forest-800 text-neutral-100"
           >
             <button
               type="button"
@@ -31,10 +31,10 @@ export function HomeTabs() {
               aria-selected={activeTab === "menu"}
               onClick={() => setActiveTab("menu")}
               className={cn(
-                "rounded-sm px-4 text-sm font-medium transition-colors",
+                " px-4 text-sm font-medium transition-colors",
                 activeTab === "menu"
-                  ? "bg-forest-700 text-ivory-50 shadow-sm"
-                  : "text-neutral-100 hover:text-ivory-50 hover:bg-forest-600 bg-forest-800",
+                  ? "text-ivory-50 shadow-sm rounded-sm "
+                  : "text-neutral-100 bg-forest-700",
               )}
             >
               منوی سفارش
@@ -45,10 +45,10 @@ export function HomeTabs() {
               aria-selected={activeTab === "restaurant"}
               onClick={() => setActiveTab("restaurant")}
               className={cn(
-                "rounded-sm px-4 text-sm font-medium transition-colors",
+                "px-4 text-sm font-medium transition-colors",
                 activeTab === "restaurant"
-                  ? "bg-forest-700 text-ivory-50 shadow-sm"
-                  : "text-neutral-100 hover:text-ivory-50 bg-forest-800 hover:bg-forest-600",
+                  ? "text-ivory-50 shadow-sm"
+                  : "text-neutral-100 bg-forest-700",
               )}
             >
               اطلاعات رستوران
@@ -56,7 +56,10 @@ export function HomeTabs() {
           </div>
 
           {activeTab === "menu" ? (
-            <div role="tabpanel" className="space-y-6">
+            <div
+              role="tabpanel"
+              className="space-y-6 rounded-b-xl rounded-t-xl bg-forest-700 p-4"
+            >
               {isPending ? (
                 <p className="text-sm text-ivory-50/80">
                   در حال بارگذاری دسته‌بندی‌ها...
@@ -77,7 +80,10 @@ export function HomeTabs() {
               <Menu activeCategory={activeCategory} />
             </div>
           ) : (
-            <div role="tabpanel">
+            <div
+              role="tabpanel"
+              className="space-y-6 rounded-b-xl rounded-t-xl bg-forest-700 p-4"
+            >
               <RestaurantInfo />
             </div>
           )}
