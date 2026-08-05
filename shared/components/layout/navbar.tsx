@@ -59,7 +59,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex size-10 items-center justify-center rounded-[4px] md:hidden"
+          className="inline-flex size-10 items-center justify-center rounded-sm md:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "بستن منو" : "باز کردن منو"}
@@ -84,7 +84,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-[4px] px-3 py-2.5 text-sm font-medium text-primary-foreground/90 transition-colors hover:bg-forest-600"
+              className="rounded-sm px-3 py-2.5 text-sm font-medium text-primary-foreground/90 transition-colors hover:bg-forest-600"
               onClick={close}
             >
               {link.label}
@@ -92,7 +92,7 @@ export function Navbar() {
           ))}
           <Link
             href="/sign-in"
-            className="rounded-[4px] px-3 py-2.5 text-sm font-medium text-primary-foreground/90 transition-colors hover:bg-forest-600"
+            className="rounded-sm px-3 py-2.5 text-sm font-medium text-primary-foreground/90 transition-colors hover:bg-forest-600"
             onClick={close}
           >
             ورود

@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import { getMenuItems } from "../api/menu.api";
+
+import { getMenuItems } from "@/features/menu/api/menu.api";
 
 export function useMenu() {
-    return useQuery({
-        queryKey: ["menu"],
-        queryFn: getMenuItems,
-    });
+  return useQuery({
+    queryKey: ["menu"],
+    queryFn: getMenuItems,
+  });
 }
