@@ -11,13 +11,16 @@ import {
   CardTitle,
 } from "@/shared/components/ui/card/card";
 import { cn } from "@/shared/lib/utils";
+import { useCartStore } from "@/features/cart/store/cart.store";
 
 function formatPrice(price: number) {
   return `${price.toLocaleString("fa-IR")} تومان`;
 }
 
-export function MenuCard({ item, onAddToCart, className }: MenuCardProps) {
+export function MenuCard({ item,className }: MenuCardProps) {
   const { name, description, price, image, isAvailable } = item;
+
+  const addItem = useCartStore((state) => state.addItem);
 
   return (
     <Card
@@ -58,7 +61,7 @@ export function MenuCard({ item, onAddToCart, className }: MenuCardProps) {
           size="sm"
           className="h-9 w-full text-sm"
           disabled={!isAvailable}
-          onClick={() => onAddToCart?.(item)}
+          onClick={() => addItem(item)}
         >
           {isAvailable ? "افزودن به سبد" : "ناموجود"}
         </Button>
