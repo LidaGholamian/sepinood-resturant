@@ -17,7 +17,7 @@ export function HomeTabs() {
   const [activeTab, setActiveTab] = useState<HomeTab>("menu");
 
   return (
-    <section className="container mx-auto px-4 py-14 sm:px-6">
+    <section className="container mx-auto px-4 py-8 sm:px-6">
       <div className="grid gap-6 lg:grid-cols-[1fr_300px] xl:grid-cols-[1fr_320px]">
         <div className="min-w-0 space-y-4 bg-forest-700 rounded-xl">
           <div
