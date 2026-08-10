@@ -1,13 +1,15 @@
 import { z } from "zod";
 
-/** Iranian mobile: 09XXXXXXXXX (11 digits) */
-const iranianMobileRegex = /^09\d{9}$/;
-
-export const mobileNumberSchema = z
+export const usernameSchema = z
   .string()
   .trim()
-  .min(1, "شماره موبایل الزامی است")
-  .regex(iranianMobileRegex, "شماره موبایل معتبر نیست (مثال: 09123456789)");
+  .min(1, "نام کاربری الزامی است")
+  .min(3, "نام کاربری باید حداقل ۳ کاراکتر باشد")
+  .max(32, "نام کاربری نباید بیشتر از ۳۲ کاراکتر باشد")
+  .regex(
+    /^[a-zA-Z0-9._]+$/,
+    "نام کاربری فقط می‌تواند شامل حروف، اعداد، نقطه و زیرخط باشد",
+  );
 
 export const passwordSchema = z
   .string()
@@ -15,13 +17,13 @@ export const passwordSchema = z
   .min(8, "رمز عبور باید حداقل ۸ کاراکتر باشد");
 
 export const signInSchema = z.object({
-  mobileNumber: mobileNumberSchema,
+  username: usernameSchema,
   password: passwordSchema,
 });
 
 export const signUpSchema = z
   .object({
-    mobileNumber: mobileNumberSchema,
+    username: usernameSchema,
     password: passwordSchema,
     confirmPassword: z.string().min(1, "تکرار رمز عبور الزامی است"),
   })

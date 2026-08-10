@@ -6,7 +6,7 @@ export function SignInPage() {
     <section className="flex flex-1 items-center justify-center px-4 py-12 md:py-16">
       <AuthFormShell
         title="ورود"
-        description="با شماره موبایل وارد حساب سپینود شوید."
+        description="با نام کاربری و رمز عبور وارد حساب سپینود شوید."
       >
         <SignInForm />
       </AuthFormShell>

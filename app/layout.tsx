@@ -44,12 +44,14 @@ export default function RootLayout({
 }>) {
   return (
     <html dir="rtl" className={`${vazirmatn.variable} ${figtree.variable}`}>
-      <body className="min-h-screen grid grid-rows-[auto_1fr_auto] bg-background text-foreground">
-        <Navbar />
-
-        <Providers>{children}</Providers>
-
-        <Footer />
+      <body className="bg-background text-foreground">
+        <Providers>
+          <div className="min-h-screen grid grid-rows-[auto_1fr_auto]">
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   );

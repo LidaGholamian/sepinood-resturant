@@ -6,7 +6,7 @@ export function SignUpPage() {
     <section className="flex flex-1 items-center justify-center px-4 py-12 md:py-16">
       <AuthFormShell
         title="ثبت‌نام"
-        description="حساب جدید بسازید و سفارش آنلاین را شروع کنید."
+        description= "حساب کاربری خود را ایجاد کنید"
       >
         <SignUpForm />
       </AuthFormShell>

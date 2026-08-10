@@ -1,12 +1,5 @@
-import type { Metadata } from "next";
-
-import { SignInPage } from "@/features/auth";
-
-export const metadata: Metadata = {
-  title: "ورود",
-  description: "ورود به سپینود با شماره موبایل",
-};
+import { redirect } from "next/navigation";
 
 export default function Page() {
-  return <SignInPage />;
+  redirect("/login");
 }
