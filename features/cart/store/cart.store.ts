@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist} from "zustand/middleware";
 
 import type { CartItem } from "../types/cart.types";
 import { MenuItem } from "@/features/menu";
@@ -6,6 +7,7 @@ import { MenuItem } from "@/features/menu";
 
 interface CartStore {
   items: CartItem[];
+  hasHydrated: boolean;
 
   addItem: (item: MenuItem) => void;
   removeItem: (id: string) => void;
@@ -19,8 +21,9 @@ interface CartStore {
 }
 
 
-export const useCartStore = create<CartStore>((set, get) => ({
+export const useCartStore = create<CartStore>()(persist((set, get) => ({
   items: [],
+  hasHydrated: false,
 
 
   addItem: (item) =>
@@ -119,4 +122,16 @@ export const useCartStore = create<CartStore>((set, get) => ({
 },
 
 
-}));
+}),
+{
+  name: "sepinood-cart",
+
+  onRehydrateStorage: () => {
+        return () => {
+          useCartStore.setState({
+            hasHydrated: true,
+          });
+        };
+      },
+    },),
+);
