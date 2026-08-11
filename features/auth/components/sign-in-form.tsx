@@ -82,7 +82,7 @@ export function SignInForm() {
       <Button
         type="submit"
         size="lg"
-        className="h-11 w-full text-base"
+        className="h-11 w-full text-base rounded-xl"
         disabled={isSubmitting}
       >
         {isSubmitting ? "در حال ورود..." : "ورود"}

@@ -65,7 +65,7 @@ export function SignUpForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
       <FormField
         control={control}
         name="username"
@@ -91,7 +91,7 @@ export function SignUpForm() {
         label="تکرار رمز عبور"
         type="password"
         autoComplete="new-password"
-        placeholder="رمز عبور را دوباره وارد کنید"
+        placeholder="تکرار رمز عبور"
       />
 
       {formError ? (
@@ -103,7 +103,7 @@ export function SignUpForm() {
       <Button
         type="submit"
         size="lg"
-        className="h-11 w-full text-base"
+        className="h-11 w-full text-base rounded-xl"
         disabled={isSubmitting}
       >
         {isSubmitting ? "در حال ثبت‌نام..." : "ثبت‌نام"}

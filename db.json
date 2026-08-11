@@ -2,22 +2,25 @@
   "categories": [
     {
       "categoryId": "1",
-      "name": "Burgers"
+      "name": "Burgers",
+      "id": "Zl-TBQ4jjxM"
     },
     {
       "categoryId": "2",
-      "name": "Salads"
+      "name": "Salads",
+      "id": "5qo6V6P1OPA"
     },
     {
-        "categoryId": "3",
-        "name": "Pizza"
+      "categoryId": "3",
+      "name": "Pizza",
+      "id": "_DMbP8WyIWc"
     },
     {
-        "categoryId": "4",
-        "name": "Pasta"
+      "categoryId": "4",
+      "name": "Pasta",
+      "id": "p4AsqmCOKh8"
     }
   ],
-
   "menuItems": [
     {
       "id": "1",
@@ -217,5 +220,12 @@
       "isAvailable": true
     }
   ],
-  "users": []
+  "users": [
+    {
+      "username": "lida",
+      "password": "$2b$10$rAwQET74Lk2srqkfkpd9LOgwPFGWmslyLLSLg1TxzntxkXckQEFX6",
+      "id": "xF2Y4lpv35c"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
