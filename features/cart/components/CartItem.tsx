@@ -27,24 +27,24 @@ export function CartItem({ item }: CartItemProps) {
       </div>
 
       {/* Product Content */}
-      <div className="flex min-w-0 flex-1 justify-between">
+      <div className="flex flex-col md:flex-row lg:flex-row min-w-0 flex-1 justify-between">
         {/* Header */}
         <div className="flex flex-row items-start justify-between gap-3">
           <div className="min-w-0">
-            <h3 className="truncate text-base font-semibold text-cream-100 sm:text-lg">
+            <h3 className="truncate text-sm md:text-base lg:text-base font-semibold text-cream-100">
               {item.name}
             </h3>
 
-            <p className="mt-1 text-sm text-cream-100">
+            <p className="mt-1 text-sm md:text-base lg:text-base text-cream-100">
               {formatPrice(item.price)}
             </p>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="mt-4 flex items-center justify-between gap-16">
+        <div className="mt-4 flex flex-col md:flex-row lg:flex-row justify-center items-start md:items-center lg:items-center md:justify-between lg:justify-between gap-2 md:gap-16 lg:gap-16">
           {/* Quantity */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center md:gap-4 lg:gap-4">
             <Button
               size="icon"
               variant="ghost"
@@ -71,7 +71,7 @@ export function CartItem({ item }: CartItemProps) {
           </div>
 
           {/* Total */}
-          <span className="whitespace-nowrap text-sm font-bold text-cream-100 sm:text-base">
+          <span className="whitespace-nowrap text-sm font-bold text-cream-100 md:text-base lg:text-base">
             {formatPrice(item.price * item.quantity)}
           </span>
 

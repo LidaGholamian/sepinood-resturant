@@ -1,10 +1,10 @@
 "use client";
 
 import { useCartStore } from "../store/cart.store";
-import { CartSummary } from "./cart-summary";
 import { CartHeader } from "./CartHeader";
 import { CartItems } from "./CartItems";
 import { EmptyCart } from "./EmptyCart";
+import { OrderSummary } from "./OrderSummary";
 
 export default function Cart() {
   const items = useCartStore((state) => state.items);
@@ -22,13 +22,13 @@ export default function Cart() {
     <main className="container mx-auto px-4 py-10 md:px-6">
       <CartHeader />
 
-      <div className="grid gap-8 lg:grid-cols-[1fr_360px]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-8">
         <section>
           <CartItems />
         </section>
 
         <aside>
-          <CartSummary />
+          <OrderSummary />
         </aside>
       </div>
     </main>
