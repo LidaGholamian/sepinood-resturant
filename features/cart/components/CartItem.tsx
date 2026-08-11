@@ -20,51 +20,72 @@ export function CartItem({ item }: CartItemProps) {
   const removeItem = useCartStore((state) => state.removeItem);
 
   return (
-    <Card className="flex items-center gap-4 p-4">
-      <div className="relative h-24 w-24 overflow-hidden rounded-lg">
+    <Card className="flex flex-row items-center gap-12 rounded-xl p-4 bg-forest-900 text-cream-100 w-full border border-forest-400">
+      {/* Product Image */}
+      <div className="relative size-24 shrink-0 overflow-hidden rounded-xl sm:size-28">
         <Image src={item.image} alt={item.name} fill className="object-cover" />
       </div>
 
-      <div className="flex flex-1 flex-col justify-between gap-3">
-        <div>
-          <h3 className="font-semibold text-lg">{item.name}</h3>
+      {/* Product Content */}
+      <div className="flex min-w-0 flex-1 justify-between">
+        {/* Header */}
+        <div className="flex flex-row items-start justify-between gap-3">
+          <div className="min-w-0">
+            <h3 className="truncate text-base font-semibold text-cream-100 sm:text-lg">
+              {item.name}
+            </h3>
 
-          <p className="text-sm text-neutral-500">{formatPrice(item.price)}</p>
+            <p className="mt-1 text-sm text-cream-100">
+              {formatPrice(item.price)}
+            </p>
+          </div>
         </div>
 
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
+        {/* Bottom */}
+        <div className="mt-4 flex items-center justify-between gap-16">
+          {/* Quantity */}
+          <div className="flex items-center gap-4">
             <Button
               size="icon"
-              variant="outline"
+              variant="ghost"
               onClick={() => decreaseQuantity(item.id)}
+              className="size-8 rounded-sm border border-neutral-200"
+              aria-label="کاهش تعداد"
             >
-              <Minus className="size-4" />
+              <Minus className="size-3.5" />
             </Button>
 
-            <span className="w-8 text-center font-medium">{item.quantity}</span>
+            <span className="w-8 text-center text-sm font-medium">
+              {item.quantity}
+            </span>
 
             <Button
               size="icon"
-              variant="outline"
+              variant="ghost"
               onClick={() => increaseQuantity(item.id)}
+              className="size-8 rounded-sm border border-neutral-200"
+              aria-label="افزایش تعداد"
             >
-              <Plus className="size-4" />
+              <Plus className="size-3.5" />
             </Button>
           </div>
 
+          {/* Total */}
+          <span className="whitespace-nowrap text-sm font-bold text-cream-100 sm:text-base">
+            {formatPrice(item.price * item.quantity)}
+          </span>
+
+          {/* Remove */}
           <Button
             variant="ghost"
             size="icon"
             onClick={() => removeItem(item.id)}
+            className="shrink-0 text-error-500 hover:bg-forest-700"
+            aria-label={`حذف ${item.name}`}
           >
-            <Trash2 className="size-4 text-red-500" />
+            <Trash2 className="size-4" />
           </Button>
         </div>
-      </div>
-
-      <div className="text-right font-semibold whitespace-nowrap">
-        {formatPrice(item.price * item.quantity)}
       </div>
     </Card>
   );
