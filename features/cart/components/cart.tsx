@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useCartStore } from "../store/cart.store";
 import { CartHeader } from "./CartHeader";
 import { CartItems } from "./CartItems";
@@ -8,6 +9,26 @@ import { OrderSummary } from "./OrderSummary";
 
 export default function Cart() {
   const items = useCartStore((state) => state.items);
+  const [hasHydrated, setHasHydrated] = useState(false);
+
+  useEffect(() => {
+     const unsubscribe = useCartStore.persist.onFinishHydration(() => {
+      setHasHydrated(true);
+    });
+
+    if (useCartStore.persist.hasHydrated()) {
+      setHasHydrated(true);
+    }
+
+    return unsubscribe}, []);
+
+  if (!hasHydrated) {
+    return (
+      <div className="flex min-h-75 items-center justify-center">
+        <p className="text-cream-100">در حال بارگذاری سبد خرید...</p>
+      </div>
+    );
+  }
 
   if (items.length === 0) {
     return (

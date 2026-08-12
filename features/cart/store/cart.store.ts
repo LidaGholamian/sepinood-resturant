@@ -7,7 +7,6 @@ import { MenuItem } from "@/features/menu";
 
 interface CartStore {
   items: CartItem[];
-  hasHydrated: boolean;
 
   addItem: (item: MenuItem) => void;
   removeItem: (id: string) => void;
@@ -125,13 +124,5 @@ export const useCartStore = create<CartStore>()(persist((set, get) => ({
 }),
 {
   name: "sepinood-cart",
-
-  onRehydrateStorage: () => {
-        return () => {
-          useCartStore.setState({
-            hasHydrated: true,
-          });
-        };
-      },
     },),
 );

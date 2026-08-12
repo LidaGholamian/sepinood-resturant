@@ -6,7 +6,7 @@ import { cn } from "@/shared/lib/utils";
 
 export function HomeHero() {
   return (
-    <section className="relative isolate h-[55svh] min-h-105 max-h-155 overflow-hidden mx-28 my-2 rounded-3xl">
+    <section className="relative isolate h-[55svh] min-h-105 max-h-155 overflow-hidden mx-4 sm:mx-4 md:mx-10 lg:mx-28 my-2 rounded-3xl">
       <Image
         src="/images/veganFood.png"
         alt="بشقاب سالاد گیاهی تازه با سبزیجات رنگارنگ"
