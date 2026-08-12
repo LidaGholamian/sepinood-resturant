@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCartHydrated } from "@/features/cart/hooks/use-cart-hydrated";
 import { useCartStore } from "../store/cart.store";
 import { CartHeader } from "./CartHeader";
 import { CartItems } from "./CartItems";
@@ -9,18 +9,7 @@ import { OrderSummary } from "./OrderSummary";
 
 export default function Cart() {
   const items = useCartStore((state) => state.items);
-  const [hasHydrated, setHasHydrated] = useState(false);
-
-  useEffect(() => {
-     const unsubscribe = useCartStore.persist.onFinishHydration(() => {
-      setHasHydrated(true);
-    });
-
-    if (useCartStore.persist.hasHydrated()) {
-      setHasHydrated(true);
-    }
-
-    return unsubscribe}, []);
+  const hasHydrated = useCartHydrated();
 
   if (!hasHydrated) {
     return (

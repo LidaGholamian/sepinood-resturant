@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
 
+import { useCartHydrated } from "@/features/cart/hooks/use-cart-hydrated";
 import { Button } from "@/shared/components/ui/button";
 import {
   Card,
@@ -16,7 +17,17 @@ function formatPrice(price: number) {
   return `${price.toLocaleString("fa-IR")} تومان`;
 }
 
+function CartSummaryEmpty() {
+  return (
+    <div className="flex flex-col items-center py-10 text-center">
+      <ShoppingCart className="mb-3 size-12 opacity-70" />
+      <p>سبد خرید شما خالی است.</p>
+    </div>
+  );
+}
+
 export function CartSummary() {
+  const hasHydrated = useCartHydrated();
   const totalItems = useCartStore((state) => state.getTotalItems());
   const totalPrice = useCartStore((state) => state.getTotalPrice());
 
@@ -30,11 +41,8 @@ export function CartSummary() {
       </CardHeader>
 
       <CardContent>
-        {totalItems === 0 ? (
-          <div className="flex flex-col items-center py-10 text-center">
-            <ShoppingCart className="mb-3 size-12 opacity-70" />
-            <p>سبد خرید شما خالی است.</p>
-          </div>
+        {!hasHydrated || totalItems === 0 ? (
+          <CartSummaryEmpty />
         ) : (
           <div className="space-y-6">
             <div className="space-y-2">
