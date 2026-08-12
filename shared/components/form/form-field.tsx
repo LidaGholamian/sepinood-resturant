@@ -6,8 +6,8 @@ import {
 } from "react-hook-form";
 
 import type { FormFieldProps } from "@/shared/components/form/form-field.types";
-import { Input } from "@/shared/components/ui/input/input";
-import { Label } from "@/shared/components/ui/lable/label";
+import { Input } from "@/shared/components/ui/input";
+import { Label } from "@/shared/components/ui/lable";
 import { cn } from "@/shared/lib/utils";
 
 export function FormField<T extends FieldValues>({

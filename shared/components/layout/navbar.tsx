@@ -2,17 +2,27 @@
 
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { signOut, useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
 
+
+import { cn } from "@/shared/lib/utils";
 import { navLinks } from "@/shared/components/layout/constants/nav-links";
 import { useMobileNav } from "@/shared/components/layout/hooks/use-mobile-nav";
 import { buttonVariants } from "@/shared/components/ui/button";
-import { cn } from "@/shared/lib/utils";
+
+import { UserMenu } from "@/features/auth/components/UserMenu";
+
 
 export function Navbar() {
   const { open, toggle, close } = useMobileNav();
   const { data: session, status } = useSession();
   const isAuthenticated = Boolean(session?.user);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 border-b border-forest-800/20 bg-forest-700 text-primary-foreground">
@@ -46,24 +56,10 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          {status === "loading" ? (
+          {!mounted ? null : status === "loading" ? (
             <span className="text-sm text-primary-foreground/70">...</span>
           ) : isAuthenticated ? (
-            <>
-              <span className="text-sm text-primary-foreground/85">
-                {session?.user?.name}
-              </span>
-              <button
-                type="button"
-                onClick={() => signOut({ callbackUrl: "/" })}
-                className={cn(
-                  buttonVariants({ variant: "secondary", size: "lg" }),
-                  "h-10 border border-ivory-50 bg-transparent px-4 text-primary-foreground hover:bg-forest-600",
-                )}
-              >
-                خروج
-              </button>
-            </>
+            <UserMenu />
           ) : (
             <Link
               href="/login"
@@ -75,6 +71,7 @@ export function Navbar() {
               ورود / ثبت نام
             </Link>
           )}
+
           <Link
             href="/"
             className={cn(
@@ -126,26 +123,10 @@ export function Navbar() {
           >
             سبد خرید
           </Link>
-          {isAuthenticated ? (
-            <button
-              type="button"
-              className="rounded-sm px-3 py-2.5 text-start text-sm font-medium text-primary-foreground/90 transition-colors hover:bg-forest-600"
-              onClick={() => {
-                close();
-                void signOut({ callbackUrl: "/" });
-              }}
-            >
-              خروج ({session?.user?.name})
-            </button>
-          ) : (
-            <Link
-              href="/login"
-              className="rounded-sm px-3 py-2.5 text-sm font-medium text-primary-foreground/90 transition-colors hover:bg-forest-600"
-              onClick={close}
-            >
-              ورود
-            </Link>
-          )}
+          <div className="flex items-center gap-2 md:hidden">
+            {mounted && isAuthenticated && <UserMenu />}
+
+          </div>
           <Link
             href="/"
             className={cn(

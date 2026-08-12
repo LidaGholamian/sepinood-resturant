@@ -10,7 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { signUpSchema } from "@/features/auth/schemas/auth.schema";
 import type { SignUpValues } from "@/features/auth/types/auth.types";
 import { FormField } from "@/shared/components/form/form-field";
-import { Button } from "@/shared/components/ui/button/button";
+import { Button } from "@/shared/components/ui/button";
 
 export function SignUpForm() {
   const router = useRouter();
