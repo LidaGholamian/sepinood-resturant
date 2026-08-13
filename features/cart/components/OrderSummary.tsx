@@ -16,11 +16,29 @@ function formatPrice(price: number) {
 }
 
 export function OrderSummary() {
+  const hasHydrated = useCartStore((state) => state._hasHydrated);
+
   const totalItems = useCartStore((state) => state.getTotalItems());
   const totalPrice = useCartStore((state) => state.getTotalPrice());
 
   const deliveryPrice = 0;
   const finalPrice = totalPrice + deliveryPrice;
+
+  if (!hasHydrated) {
+    return (
+      <Card>
+        <CardHeader>
+          <CardTitle>خلاصه سفارش</CardTitle>
+        </CardHeader>
+
+        <CardContent className="space-y-4">
+          <div className="h-5 animate-pulse rounded bg-cream-100/10" />
+          <div className="h-5 animate-pulse rounded bg-cream-100/10" />
+          <div className="h-5 animate-pulse rounded bg-cream-100/10" />
+        </CardContent>
+      </Card>
+    );
+  }
 
   return (
     <Card className="border-forest-400 bg-forest-900 text-cream-100 lg:sticky lg:top-24">
