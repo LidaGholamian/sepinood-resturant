@@ -45,6 +45,17 @@ export function CartItem({ item }: CartItemProps) {
         <div className="mt-4 flex flex-col md:flex-row lg:flex-row justify-center items-start md:items-center lg:items-center md:justify-between lg:justify-between gap-2 md:gap-16 lg:gap-16">
           {/* Quantity */}
           <div className="flex items-center md:gap-4 lg:gap-4">
+            {item.quantity === 1 ? (
+              <Button
+                size="icon"
+                variant="ghost"
+                onClick={() => removeItem(item.id)}
+                className="size-8 rounded-sm border border-neutral-200"
+                aria-label="حذف"
+              >
+                <Trash2 className="size-3.5" />
+              </Button>
+            ): (
             <Button
               size="icon"
               variant="ghost"
@@ -53,7 +64,7 @@ export function CartItem({ item }: CartItemProps) {
               aria-label="کاهش تعداد"
             >
               <Minus className="size-3.5" />
-            </Button>
+            </Button> )}
 
             <span className="w-8 text-center text-sm font-medium">
               {item.quantity}
