@@ -33,13 +33,16 @@ export function CheckoutForms() {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         {/* Name */}
         <div className="space-y-2">
-          <Label htmlFor="name">نام</Label>
+          <Label htmlFor="name" className="text-cream-100/70">
+            نام
+          </Label>
 
           <Input
             id="name"
             type="text"
             {...register("name")}
             placeholder="نام خود را وارد کنید"
+            className="text-cream-100"
           />
 
           {errors.name && (
@@ -49,13 +52,16 @@ export function CheckoutForms() {
 
         {/* Email */}
         <div className="space-y-2">
-          <Label htmlFor="email">ایمیل</Label>
+          <Label htmlFor="email" className="text-cream-100/70">
+            ایمیل
+          </Label>
 
           <Input
             id="email"
             type="email"
             {...register("email")}
             placeholder="example@email.com"
+            className="text-cream-100"
           />
 
           {errors.email && (
@@ -65,13 +71,16 @@ export function CheckoutForms() {
 
         {/* Phone */}
         <div className="space-y-2">
-          <Label htmlFor="phone">شماره تماس</Label>
+          <Label htmlFor="phone" className="text-cream-100/70">
+            شماره تماس
+          </Label>
 
           <Input
             id="phone"
             type="tel"
             {...register("phone")}
             placeholder="شماره تماس خود را وارد کنید"
+            className="text-cream-100"
           />
 
           {errors.phone && (
@@ -81,13 +90,16 @@ export function CheckoutForms() {
 
         {/* Address */}
         <div className="space-y-2">
-          <Label htmlFor="address">آدرس</Label>
+          <Label htmlFor="address" className="text-cream-100/70">
+            آدرس
+          </Label>
 
           <Textarea
             id="address"
             rows={4}
             {...register("address")}
             placeholder="آدرس کامل خود را وارد کنید"
+            className="text-cream-100"
           />
 
           {errors.address && (
@@ -97,7 +109,7 @@ export function CheckoutForms() {
 
         {/* Payment Method */}
         <div className="space-y-3">
-          <Label>روش پرداخت</Label>
+          <Label className="text-cream-100/70">روش پرداخت</Label>
 
           <Controller
             name="paymentMethod"
@@ -110,12 +122,16 @@ export function CheckoutForms() {
               >
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="online" id="online" />
-                  <Label htmlFor="online">پرداخت آنلاین</Label>
+                  <Label htmlFor="online" className="text-cream-100/70">
+                    پرداخت آنلاین
+                  </Label>
                 </div>
 
                 <div className="flex items-center gap-2">
                   <RadioGroupItem value="cash" id="cash" />
-                  <Label htmlFor="cash">پرداخت هنگام تحویل</Label>
+                  <Label htmlFor="cash" className="text-cream-100/70">
+                    پرداخت هنگام تحویل
+                  </Label>
                 </div>
               </RadioGroup>
             )}

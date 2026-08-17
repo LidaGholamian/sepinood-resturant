@@ -1,6 +1,6 @@
 "use client";
 
-import { useCartHydrated } from "@/features/cart/hooks/use-cart-hydrated";
+import { useCartHydrated } from "../hooks/use-cart-hydrated";
 import { useCartStore } from "../store/cart.store";
 import { CartHeader } from "./CartHeader";
 import { CartItems } from "./CartItems";

@@ -10,12 +10,13 @@ import {
   CardTitle,
 } from "@/shared/components/ui/card";
 import { useCartStore } from "../store/cart.store";
+import { OrderSummaryProps } from "../types/orderSummary.types";
 
 function formatPrice(price: number) {
   return `${price.toLocaleString("fa-IR")} تومان`;
 }
 
-export function OrderSummary() {
+export function OrderSummary({ showCheckoutButton = true }: OrderSummaryProps) {
   const hasHydrated = useCartStore((state) => state._hasHydrated);
 
   const totalItems = useCartStore((state) => state.getTotalItems());
@@ -86,12 +87,14 @@ export function OrderSummary() {
         </div>
 
         {/* Checkout */}
-        <Button
-          className="w-full bg-cream-100 font-semibold text-forest-900 hover:bg-cream-100/90"
-          disabled={totalItems === 0}
-        >
-          ادامه فرایند سفارش
-        </Button>
+        {showCheckoutButton && (
+          <Button
+            className="w-full bg-cream-100 font-semibold text-forest-900 hover:bg-cream-100/90"
+            disabled={totalItems === 0}
+          >
+            ادامه فرایند سفارش
+          </Button>
+        )}
       </CardContent>
     </Card>
   );
