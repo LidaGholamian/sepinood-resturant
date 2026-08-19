@@ -1,13 +1,10 @@
 "use client";
 
-import {
-  Controller,
-  type FieldValues,
-} from "react-hook-form";
+import { Controller, type FieldValues } from "react-hook-form";
 
 import type { FormFieldProps } from "@/shared/components/form/form-field.types";
 import { Input } from "@/shared/components/ui/input";
-import { Label } from "@/shared/components/ui/lable";
+import { Label } from "@/shared/components/ui/label";
 import { cn } from "@/shared/lib/utils";
 
 export function FormField<T extends FieldValues>({
@@ -39,9 +36,7 @@ export function FormField<T extends FieldValues>({
             inputMode={inputMode}
             dir={dir}
             aria-invalid={fieldState.invalid}
-            aria-describedby={
-              fieldState.error ? `${fieldId}-error` : undefined
-            }
+            aria-describedby={fieldState.error ? `${fieldId}-error` : undefined}
           />
           {fieldState.error?.message ? (
             <p
