@@ -11,6 +11,7 @@ import {
 } from "@/shared/components/ui/card";
 import { useCartStore } from "../store/cart.store";
 import { OrderSummaryProps } from "../types/orderSummary.types";
+import { useRouter } from "next/navigation";
 
 function formatPrice(price: number) {
   return `${price.toLocaleString("fa-IR")} تومان`;
@@ -24,6 +25,8 @@ export function OrderSummary({ showCheckoutButton = true }: OrderSummaryProps) {
 
   const deliveryPrice = 0;
   const finalPrice = totalPrice + deliveryPrice;
+
+  const router = useRouter();
 
   if (!hasHydrated) {
     return (
@@ -89,8 +92,9 @@ export function OrderSummary({ showCheckoutButton = true }: OrderSummaryProps) {
         {/* Checkout */}
         {showCheckoutButton && (
           <Button
-            className="w-full bg-cream-100 font-semibold text-forest-900 hover:bg-cream-100/90"
+            className="w-full bg-cream-100 font-semibold text-forest-900 hover:bg-cream-100/80"
             disabled={totalItems === 0}
+            onClick={() => router.push("/checkout")}
           >
             ادامه فرایند سفارش
           </Button>

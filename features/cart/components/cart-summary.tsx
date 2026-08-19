@@ -57,7 +57,7 @@ export function CartSummary() {
               </div>
             </div>
 
-            <Button className="w-full">
+            <Button className="w-full bg-cream-100 font-semibold text-forest-900 hover:bg-cream-100/80">
               <Link href="/cart">مشاهده سبد خرید</Link>
             </Button>
           </div>

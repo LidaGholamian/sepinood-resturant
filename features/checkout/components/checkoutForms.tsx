@@ -145,7 +145,7 @@ export function CheckoutForms() {
         </div>
 
         {/* Submit */}
-        <Button type="submit" className="w-full">
+        <Button type="submit" className="w-full bg-cream-100 font-semibold text-forest-900 hover:bg-cream-100/80">
           ثبت سفارش
         </Button>
       </form>
