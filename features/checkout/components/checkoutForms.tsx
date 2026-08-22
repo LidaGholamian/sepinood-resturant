@@ -3,6 +3,8 @@
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+import { useCartStore } from "@/features/cart/store/cart.store";
+import { createOrderPayload } from "@/features/orders";
 import { CheckoutFormValues } from "../types/checkout.types";
 import { checkoutSchema } from "../schemas/checkout.schema";
 import { Button } from "@/shared/components/ui/button";
@@ -12,6 +14,9 @@ import { Textarea } from "@/shared/components/ui/textarea";
 import { Input } from "@/shared/components/ui/input";
 
 export function CheckoutForms() {
+  const items = useCartStore((state) => state.items);
+  const getTotalPrice = useCartStore((state) => state.getTotalPrice);
+
   const {
     register,
     handleSubmit,
@@ -29,7 +34,13 @@ export function CheckoutForms() {
   });
 
   const onSubmit = (data: CheckoutFormValues) => {
-    console.log("Checkout data:", data);
+    const orderPayload = createOrderPayload({
+      ...data,
+      items,
+      totalPrice: getTotalPrice(),
+    });
+
+    console.log("Order payload:", orderPayload);
   };
 
   return (
