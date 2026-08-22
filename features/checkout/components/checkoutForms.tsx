@@ -4,7 +4,7 @@ import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useCartStore } from "@/features/cart/store/cart.store";
-import { createOrderPayload } from "@/features/orders";
+import { createOrderPayload, createOrder } from "@/features/orders";
 import { CheckoutFormValues } from "../types/checkout.types";
 import { checkoutSchema } from "../schemas/checkout.schema";
 import { Button } from "@/shared/components/ui/button";
@@ -33,7 +33,7 @@ export function CheckoutForms() {
     },
   });
 
-  const onSubmit = (data: CheckoutFormValues) => {
+  const onSubmit = async(data: CheckoutFormValues) => {
     const orderPayload = createOrderPayload({
       ...data,
       items,
@@ -41,6 +41,13 @@ export function CheckoutForms() {
     });
 
     console.log("Order payload:", orderPayload);
+    try{
+      const createdOrder = await createOrder(orderPayload);
+      console.log('CreateOrder:', createdOrder)
+    }
+    catch(error){
+      console.log('Failed to create order:', error);
+    }
   };
 
   return (
