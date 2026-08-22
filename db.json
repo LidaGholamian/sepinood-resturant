@@ -320,6 +320,29 @@
           "quantity": 1
         }
       ]
+    },
+    {
+      "id": "1lRguNsEEDc",
+      "name": "طاهره غلامیان",
+      "email": "ta.gholamian@gmail.com",
+      "phone": "09112335647",
+      "address": "رشت-استادسرا- خیابان سهیل دبیری- کوچه نشاط- ساختمان ارک- طبقه اول - واحد 1",
+      "paymentMethod": "online",
+      "totalPrice": 430000,
+      "items": [
+        {
+          "id": "2",
+          "name": "vegan salami",
+          "price": 180000,
+          "quantity": 1
+        },
+        {
+          "id": "1",
+          "name": "BB Burger",
+          "price": 250000,
+          "quantity": 1
+        }
+      ]
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

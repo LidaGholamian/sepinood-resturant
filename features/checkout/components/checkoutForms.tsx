@@ -22,6 +22,7 @@ export function CheckoutForms() {
 
   const items = useCartStore((state) => state.items);
   const getTotalPrice = useCartStore((state) => state.getTotalPrice);
+  const clearCart = useCartStore((state) => state.clearCart);
 
   const {
     register,
@@ -55,6 +56,7 @@ export function CheckoutForms() {
       const createdOrder = await createOrder(orderPayload);
       console.log('CreateOrder:', createdOrder)
 
+      clearCart();
       setSubmitSuccess(true);
     }
     catch(error){
