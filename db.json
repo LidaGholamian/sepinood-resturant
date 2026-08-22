@@ -226,6 +226,5 @@
       "password": "$2b$10$rAwQET74Lk2srqkfkpd9LOgwPFGWmslyLLSLg1TxzntxkXckQEFX6",
       "id": "xF2Y4lpv35c"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }
