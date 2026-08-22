@@ -1,5 +1,7 @@
 "use client";
 
+import {useState} from "react";
+
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -14,6 +16,10 @@ import { Textarea } from "@/shared/components/ui/textarea";
 import { Input } from "@/shared/components/ui/input";
 
 export function CheckoutForms() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
   const items = useCartStore((state) => state.items);
   const getTotalPrice = useCartStore((state) => state.getTotalPrice);
 
@@ -34,6 +40,10 @@ export function CheckoutForms() {
   });
 
   const onSubmit = async(data: CheckoutFormValues) => {
+    setIsSubmitting(true);
+    setSubmitError(null);
+    setSubmitSuccess(false);
+
     const orderPayload = createOrderPayload({
       ...data,
       items,
@@ -44,9 +54,15 @@ export function CheckoutForms() {
     try{
       const createdOrder = await createOrder(orderPayload);
       console.log('CreateOrder:', createdOrder)
+
+      setSubmitSuccess(true);
     }
     catch(error){
       console.log('Failed to create order:', error);
+      setSubmitError("ثبت سفارش با خطا مواجه شد. لطفاً دوباره تلاش کنید.");
+    }
+    finally{
+      setIsSubmitting(false);
     }
   };
 
@@ -166,12 +182,19 @@ export function CheckoutForms() {
         )}
       </div>
 
+      {submitError && <p className="text-sm text-destructive">{submitError}</p>}
+
+      {submitSuccess && (
+        <p className="text-sm text-green-500">سفارش شما با موفقیت ثبت شد.</p>
+      )}
+
       {/* Submit */}
       <Button
         type="submit"
+        disabled={isSubmitting}
         className="w-full bg-cream-100 font-semibold text-forest-900 hover:bg-cream-100/80"
       >
-        ثبت سفارش
+        {isSubmitting ? "در حال ثبت سفارش..." : "ثبت سفارش"}
       </Button>
     </form>
   );
