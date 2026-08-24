@@ -1,9 +1,11 @@
 "use client";
 
-import { Order } from "@/features/orders";
-import { getUserOrders } from "@/features/orders/api/orders.api";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+
+import { Order } from "@/features/orders";
+import { getUserOrders } from "@/features/orders/api/orders.api";
+import { OrderCard } from "@/features/orders/components/order-card";
 
 export default function OrdersPage() {
   const { data: session, status } = useSession();
@@ -58,13 +60,11 @@ export default function OrdersPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-2xl font-bold mb-6">سفارش های من</h1>
-      {orders.map((order) => (
-        <div key={order.id}>
-          <h2>{order.id}</h2>
-          <p>سفارش های من: {order.id}</p>
-          <p>مبلغ: {order.totalPrice}</p>
-        </div>
-      ))}
+      <div className="space-y-4">
+        {orders.map((order) => (
+          <OrderCard key={order.id} order={order} />
+        ))}
+      </div>
     </div>
   );
 }

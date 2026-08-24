@@ -5,6 +5,13 @@ export interface OrderItem {
   quantity: number;
 }
 
+export type OrderStatus =
+  | "pending"
+  | "preparing"
+  | "delivering"
+  | "completed"
+  | "cancelled";
+
 export interface Order {
   id: string;
   name: string;
@@ -15,4 +22,9 @@ export interface Order {
   items: OrderItem[];
   totalPrice: number;
   userId: string;
+  status: OrderStatus;
 }
+
+export type OrderCardProps = {
+  order: Order;
+};

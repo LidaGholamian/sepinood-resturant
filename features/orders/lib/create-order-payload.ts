@@ -9,5 +9,6 @@ export function createOrderPayload(input: CreateOrderPayloadInput): Order {
     id: crypto.randomUUID(),
     ...customerDetails,
     items: items.map(mapCartItemToOrderItem),
+    status: "pending",
   };
 }

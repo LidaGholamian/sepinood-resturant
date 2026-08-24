@@ -249,20 +249,9 @@
           "name": "alferedo",
           "price": 580000,
           "quantity": 1
-        },
-        {
-          "id": "11",
-          "name": "orbita",
-          "price": 780000,
-          "quantity": 1
-        },
-        {
-          "id": "14",
-          "name": "killsezar",
-          "price": 780000,
-          "quantity": 1
         }
-      ]
+      ],
+      "status": "pending"
     },
     {
       "id": "qt1XdDLJdfs",
@@ -286,7 +275,8 @@
           "price": 650000,
           "quantity": 1
         }
-      ]
+      ],
+      "status": "completed"
     },
     {
       "id": "IVTn0mxfUTQ",
@@ -310,7 +300,8 @@
           "price": 180000,
           "quantity": 1
         }
-      ]
+      ],
+      "status": "completed"
     },
     {
       "id": "EwfAUbYT7Tw",
@@ -327,14 +318,9 @@
           "name": "vegan salami",
           "price": 180000,
           "quantity": 1
-        },
-        {
-          "id": "3",
-          "name": "Tofo",
-          "price": 190000,
-          "quantity": 1
         }
-      ]
+      ],
+      "status": "pending"
     },
     {
       "id": "pbf1poNnXiQ",
@@ -358,7 +344,39 @@
           "price": 180000,
           "quantity": 1
         }
-      ]
+      ],
+      "status": "completed"
+    },
+    {
+      "id": "PAZW_PCo5hw",
+      "userId": "xF2Y4lpv35c",
+      "name": "طاهره غلامیان",
+      "email": "ta.gholamian@gmail.com",
+      "phone": "09112335647",
+      "address": "رشت-استادسرا- خیابان سهیل دبیری- کوچه نشاط- ساختمان ارک- طبقه اول - واحد 1",
+      "paymentMethod": "online",
+      "totalPrice": 730000,
+      "items": [
+        {
+          "id": "2",
+          "name": "vegan salami",
+          "price": 180000,
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "name": "Tofo",
+          "price": 190000,
+          "quantity": 1
+        },
+        {
+          "id": "13",
+          "name": "greenmix",
+          "price": 360000,
+          "quantity": 1
+        }
+      ],
+      "status": "pending"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
