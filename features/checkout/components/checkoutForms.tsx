@@ -20,7 +20,7 @@ import { Input } from "@/shared/components/ui/input";
 export function CheckoutForms() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
+  
   const router = useRouter();
   const { data: session } = useSession();
 
@@ -47,15 +47,12 @@ export function CheckoutForms() {
   const onSubmit = async (data: CheckoutFormValues) => {
     setIsSubmitting(true);
     setSubmitError(null);
-    setSubmitSuccess(false);
 
     if (!session?.user?.id) {
       setSubmitError("برای ثبت سفارش ابتدا وارد حساب کاربری خود شوید.");
+      setIsSubmitting(false);
       return;
     }
-
-    setIsSubmitting(true);
-    setSubmitError(null);
 
     const orderPayload = createOrderPayload({
       userId: session.user.id,
@@ -193,10 +190,6 @@ export function CheckoutForms() {
       </div>
 
       {submitError && <p className="text-sm text-destructive">{submitError}</p>}
-
-      {submitSuccess && (
-        <p className="text-sm text-green-500">سفارش شما با موفقیت ثبت شد.</p>
-      )}
 
       {/* Submit */}
       <Button
