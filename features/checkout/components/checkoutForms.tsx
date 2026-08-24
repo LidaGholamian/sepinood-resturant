@@ -1,6 +1,7 @@
 "use client";
 
 import {useState} from "react";
+import { useRouter } from "next/navigation";
 
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -19,6 +20,7 @@ export function CheckoutForms() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const router = useRouter();
 
   const items = useCartStore((state) => state.items);
   const getTotalPrice = useCartStore((state) => state.getTotalPrice);
@@ -57,7 +59,7 @@ export function CheckoutForms() {
       console.log('CreateOrder:', createdOrder)
 
       clearCart();
-      setSubmitSuccess(true);
+      router.push("/order-success");
     }
     catch(error){
       console.log('Failed to create order:', error);
