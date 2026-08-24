@@ -1,7 +1,8 @@
 "use client";
 
-import {useState} from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,6 +22,7 @@ export function CheckoutForms() {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const router = useRouter();
+  const { data: session } = useSession();
 
   const items = useCartStore((state) => state.items);
   const getTotalPrice = useCartStore((state) => state.getTotalPrice);
@@ -42,30 +44,34 @@ export function CheckoutForms() {
     },
   });
 
-  const onSubmit = async(data: CheckoutFormValues) => {
+  const onSubmit = async (data: CheckoutFormValues) => {
     setIsSubmitting(true);
     setSubmitError(null);
     setSubmitSuccess(false);
 
+    if (!session?.user?.id) {
+      setSubmitError("برای ثبت سفارش ابتدا وارد حساب کاربری خود شوید.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitError(null);
+
     const orderPayload = createOrderPayload({
+      userId: session.user.id,
       ...data,
       items,
       totalPrice: getTotalPrice(),
     });
 
-    console.log("Order payload:", orderPayload);
-    try{
+    try {
       const createdOrder = await createOrder(orderPayload);
-      console.log('CreateOrder:', createdOrder)
 
       clearCart();
       router.push("/order-success");
-    }
-    catch(error){
-      console.log('Failed to create order:', error);
+    } catch (error) {
       setSubmitError("ثبت سفارش با خطا مواجه شد. لطفاً دوباره تلاش کنید.");
-    }
-    finally{
+    } finally {
       setIsSubmitting(false);
     }
   };

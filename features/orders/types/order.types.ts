@@ -14,4 +14,5 @@ export interface Order {
   paymentMethod: "online" | "cash";
   items: OrderItem[];
   totalPrice: number;
+  userId: string;
 }
