@@ -2,6 +2,7 @@
 
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 import { Order } from "@/features/orders";
 import { getUserOrders } from "@/features/orders/api/orders.api";
@@ -9,8 +10,11 @@ import { OrderCard } from "@/features/orders/components/order-card";
 
 export default function OrdersPage() {
   const { data: session, status } = useSession();
+  const searchParams = useSearchParams();
+  const page = Number(searchParams.get("page")) || 1;
 
   const [orders, setOrders] = useState<Order[]>([]);
+  const [totalPages, setTotalPages] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -26,8 +30,11 @@ export default function OrdersPage() {
       try {
         setError(null);
 
-        const userOrders = await getUserOrders(session?.user.id);
-        setOrders(userOrders);
+        const userOrders = await getUserOrders(session?.user.id, page);
+
+        setOrders(userOrders.data);
+        setTotalPages(userOrders.pages);
+
       } catch (error) {
         console.error("Failed to fetch orders:", error);
         setError("خطایی در دریافت سفارش ها رخ داده است");
@@ -36,7 +43,7 @@ export default function OrdersPage() {
       }
     };
     fetchOrders();
-  }, [session, status]);
+  }, [session, status, page]);
 
   if (status === "loading" || isLoading)
     return (

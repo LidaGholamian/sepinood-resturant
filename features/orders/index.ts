@@ -4,3 +4,4 @@ export type { Order, OrderItem, OrderCardProps, OrderStatus } from "./types/orde
 export type { CreateOrderPayloadInput } from "./types/create-order-payload.types";
 export { createOrder } from "./api/orders.api";
 export { ORDER_STATUS_LABELS } from "./constants/order-status.constants";
+export type { PaginatedOrders } from "./types/order.types";

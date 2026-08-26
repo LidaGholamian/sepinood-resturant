@@ -28,3 +28,13 @@ export interface Order {
 export type OrderCardProps = {
   order: Order;
 };
+
+export type PaginatedOrders = {
+  data: Order[];
+  first: number;
+  prev: number | null;
+  next: number | null;
+  last: number;
+  pages: number;
+  items: number;
+};
