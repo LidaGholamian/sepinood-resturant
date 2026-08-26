@@ -5,7 +5,7 @@ import {
   CardTitle,
 } from "@/shared/components/ui/card";
 
-import type { OrderCardProps } from "@/features/orders";
+import { ORDER_STATUS_LABELS, type OrderCardProps } from "@/features/orders";
 
 export function OrderCard({order}: OrderCardProps){
     const totalItems = order.items.reduce((total, item) => total + item.quantity, 0);
@@ -17,6 +17,11 @@ export function OrderCard({order}: OrderCardProps){
         </CardHeader>
 
         <CardContent className="space-y-3">
+          <div className="flex items-center justify-between">
+            <span className="text-cream-100/70">وضعیت سفارش</span>
+
+            <span>{ORDER_STATUS_LABELS[order.status]}</span>
+          </div>
           <div className="flex justify-between">
             <span className="text-cream-100/70">تعداد اقلام</span>
 

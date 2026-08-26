@@ -3,3 +3,4 @@ export { mapCartItemToOrderItem } from "./lib/map-cart-item-to-order-item";
 export type { Order, OrderItem, OrderCardProps, OrderStatus } from "./types/order.types";
 export type { CreateOrderPayloadInput } from "./types/create-order-payload.types";
 export { createOrder } from "./api/orders.api";
+export { ORDER_STATUS_LABELS } from "./constants/order-status.constants";
