@@ -8,6 +8,15 @@ import { Order } from "@/features/orders";
 import { getUserOrders } from "@/features/orders/api/orders.api";
 import { OrderCard } from "@/features/orders/components/order-card";
 import { Button } from "@/shared/components/ui/button";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationLink,
+} from "@/shared/components/ui/pagination";
+import { cn } from "@/shared/lib/utils";
 
 export default function OrdersPage() {
   const { data: session, status } = useSession();
@@ -78,15 +87,46 @@ export default function OrdersPage() {
           <OrderCard key={order.id} order={order} />
         ))}
       </div>
-      <div className="flex items-center justify-center gap-4 mt-8">
-        <Button onClick={() => handlePageChange(page - 1)} disabled={page === 1}>
-            قبلی
-        </Button>
-        <span>صفحه {page} از {totalPages}</span>
-        <Button onClick={() => handlePageChange(page + 1)} disabled={page === totalPages}>
-            بعدی
-        </Button>
-      </div>
+      <Pagination className="mt-8">
+        <PaginationContent className="gap-2">
+          <PaginationItem>
+            <PaginationPrevious
+              text="قبلی"
+              onClick={() => handlePageChange(page - 1)}
+              aria-disabled={page === 1}
+              className={cn(
+                "text-cream-100 hover:bg-white/10 hover:text-cream-100",
+                page === 1 && "pointer-events-none opacity-40",
+              )}
+            />
+          </PaginationItem>
+
+          <PaginationItem>
+            <PaginationLink
+              isActive
+              href="#"
+              onClick={(event) => {
+                event.preventDefault();
+              }}
+              className="border-cream-100/30 bg-white/20 text-cream-100 hover:bg-white/10 hover:text-cream-100"
+            >
+              {page}
+            </PaginationLink>
+          </PaginationItem>
+
+          <PaginationItem>
+            <PaginationNext
+              text="بعدی"
+              onClick={() => handlePageChange(page + 1)}
+              aria-disabled={page === totalPages}
+              className={cn(
+                "text-cream-100 hover:bg-white/10 hover:text-cream-100",
+                page === totalPages && "pointer-events-none opacity-40",
+              )}
+            />
+          </PaginationItem>
+        </PaginationContent>
+      </Pagination>
     </div>
   );
 }
