@@ -2,11 +2,12 @@
 
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 
 import { Order } from "@/features/orders";
 import { getUserOrders } from "@/features/orders/api/orders.api";
 import { OrderCard } from "@/features/orders/components/order-card";
+import { Button } from "@/shared/components/ui/button";
 
 export default function OrdersPage() {
   const { data: session, status } = useSession();
@@ -17,6 +18,8 @@ export default function OrdersPage() {
   const [totalPages, setTotalPages] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  const router = useRouter();
 
   useEffect(() => {
     if (status === "loading") return;
@@ -30,11 +33,10 @@ export default function OrdersPage() {
       try {
         setError(null);
 
-        const userOrders = await getUserOrders(session?.user.id, page);
+        const userOrders = await getUserOrders(session.user.id, page);
 
         setOrders(userOrders.data);
         setTotalPages(userOrders.pages);
-
       } catch (error) {
         console.error("Failed to fetch orders:", error);
         setError("خطایی در دریافت سفارش ها رخ داده است");
@@ -64,6 +66,10 @@ export default function OrdersPage() {
       </p>
     );
 
+    const handlePageChange = (newPage: number) => {
+        router.push(`/profile/orders?page=${newPage}`);
+    }
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-2xl font-bold mb-6">سفارش های من</h1>
@@ -71,6 +77,15 @@ export default function OrdersPage() {
         {orders.map((order) => (
           <OrderCard key={order.id} order={order} />
         ))}
+      </div>
+      <div className="flex items-center justify-center gap-4 mt-8">
+        <Button onClick={() => handlePageChange(page - 1)} disabled={page === 1}>
+            قبلی
+        </Button>
+        <span>صفحه {page} از {totalPages}</span>
+        <Button onClick={() => handlePageChange(page + 1)} disabled={page === totalPages}>
+            بعدی
+        </Button>
       </div>
     </div>
   );
