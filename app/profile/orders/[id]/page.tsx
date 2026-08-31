@@ -1,5 +1,7 @@
 import { getOrderById } from "@/features/orders/api";
 import { ORDER_STATUS_LABELS, orderStatusClasses } from "@/features/orders/constants/order-status.constants";
+import OrderItems from "@/features/orders/components/order-items";
+
 import { Badge } from "@/shared/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/components/ui/card";
 
@@ -15,7 +17,7 @@ export default async function OrderDetailsPage({
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <Card className="bg-forest-700 border-none text-cream-100 w-full mx-auto max-w-md">
+      <Card className="bg-forest-700 border-none text-cream-100 w-full mx-auto max-w-xl">
         <CardHeader>
           <CardTitle className="text-xl">جزئیات سفارش</CardTitle>
         </CardHeader>
@@ -28,6 +30,8 @@ export default async function OrderDetailsPage({
               {ORDER_STATUS_LABELS[order.status]}
             </Badge>
           </div>
+
+          <OrderItems items={order.items} />
 
           <div className="space-y-3 border-t border-cream-100/10 pt-4">
             <div className="flex justify-between">
@@ -49,7 +53,9 @@ export default async function OrderDetailsPage({
 
             <div className="flex justify-between">
               <span className="text-cream-100/70">مبلغ کل</span>
-              <span>{order.totalPrice.toLocaleString("fa-IR")} تومان</span>
+              <span className="whitespace-nowrap">
+                {order.totalPrice.toLocaleString("fa-IR")} تومان
+              </span>
             </div>
 
             <div>

@@ -38,3 +38,7 @@ export type PaginatedOrders = {
   pages: number;
   items: number;
 };
+
+export interface OrderItemsProps {
+  items: OrderItem[];
+}

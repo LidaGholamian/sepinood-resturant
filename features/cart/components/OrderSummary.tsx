@@ -12,10 +12,7 @@ import {
 import { useCartStore } from "../store/cart.store";
 import { OrderSummaryProps } from "../types/orderSummary.types";
 import { useRouter } from "next/navigation";
-
-function formatPrice(price: number) {
-  return `${price.toLocaleString("fa-IR")} تومان`;
-}
+import { formatPrice } from "@/features/orders/lib/format-price";
 
 export function OrderSummary({ showCheckoutButton = true }: OrderSummaryProps) {
   const hasHydrated = useCartStore((state) => state._hasHydrated);
