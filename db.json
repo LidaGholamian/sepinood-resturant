@@ -229,156 +229,6 @@
   ],
   "orders": [
     {
-      "id": "zFIjRq7Xhh4",
-      "userId": "xF2Y4lpv35c",
-      "name": "طاهره غلامیان",
-      "email": "ta.gholamian@gmail.com",
-      "phone": "09112335647",
-      "address": "رشت-استادسرا- خیابان سهیل دبیری- کوچه نشاط- ساختمان ارک- طبقه اول - واحد 1",
-      "paymentMethod": "online",
-      "totalPrice": 2640000,
-      "items": [
-        {
-          "id": "1",
-          "name": "BB Burger",
-          "price": 250000,
-          "quantity": 2
-        },
-        {
-          "id": "9",
-          "name": "alferedo",
-          "price": 580000,
-          "quantity": 1
-        }
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "qt1XdDLJdfs",
-      "userId": "xF2Y4lpv35c",
-      "name": "طاهره غلامیان",
-      "email": "ta.gholamian@gmail.com",
-      "phone": "09112335647",
-      "address": "رشت-استادسرا- خیابان سهیل دبیری- کوچه نشاط- ساختمان ارک- طبقه اول - واحد 1",
-      "paymentMethod": "online",
-      "totalPrice": 1300000,
-      "items": [
-        {
-          "id": "6",
-          "name": "american peperoni",
-          "price": 650000,
-          "quantity": 1
-        },
-        {
-          "id": "5",
-          "name": "american pizza",
-          "price": 650000,
-          "quantity": 1
-        }
-      ],
-      "status": "completed"
-    },
-    {
-      "id": "IVTn0mxfUTQ",
-      "userId": "xF2Y4lpv35c",
-      "name": "طاهره غلامیان",
-      "email": "ta.gholamian@gmail.com",
-      "phone": "09112335647",
-      "address": "رشت-استادسرا- خیابان سهیل دبیری- کوچه نشاط- ساختمان ارک- طبقه اول - واحد 1",
-      "paymentMethod": "online",
-      "totalPrice": 370000,
-      "items": [
-        {
-          "id": "3",
-          "name": "Tofo",
-          "price": 190000,
-          "quantity": 1
-        },
-        {
-          "id": "2",
-          "name": "vegan salami",
-          "price": 180000,
-          "quantity": 1
-        }
-      ],
-      "status": "completed"
-    },
-    {
-      "id": "EwfAUbYT7Tw",
-      "userId": "xF2Y4lpv35c",
-      "name": "طاهره غلامیان",
-      "email": "ta.gholamian@gmail.com",
-      "phone": "09112335647",
-      "address": "رشت-استادسرا- خیابان سهیل دبیری- کوچه نشاط- ساختمان ارک- طبقه اول - واحد 1",
-      "paymentMethod": "online",
-      "totalPrice": 370000,
-      "items": [
-        {
-          "id": "2",
-          "name": "vegan salami",
-          "price": 180000,
-          "quantity": 1
-        }
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "pbf1poNnXiQ",
-      "userId": "xF2Y4lpv35c",
-      "name": "طاهره غلامیان",
-      "email": "ta.gholamian@gmail.com",
-      "phone": "09112335647",
-      "address": "رشت-استادسرا- خیابان سهیل دبیری- کوچه نشاط- ساختمان ارک- طبقه اول - واحد 1",
-      "paymentMethod": "online",
-      "totalPrice": 370000,
-      "items": [
-        {
-          "id": "3",
-          "name": "Tofo",
-          "price": 190000,
-          "quantity": 1
-        },
-        {
-          "id": "2",
-          "name": "vegan salami",
-          "price": 180000,
-          "quantity": 1
-        }
-      ],
-      "status": "completed"
-    },
-    {
-      "id": "PAZW_PCo5hw",
-      "userId": "xF2Y4lpv35c",
-      "name": "طاهره غلامیان",
-      "email": "ta.gholamian@gmail.com",
-      "phone": "09112335647",
-      "address": "رشت-استادسرا- خیابان سهیل دبیری- کوچه نشاط- ساختمان ارک- طبقه اول - واحد 1",
-      "paymentMethod": "online",
-      "totalPrice": 730000,
-      "items": [
-        {
-          "id": "2",
-          "name": "vegan salami",
-          "price": 180000,
-          "quantity": 1
-        },
-        {
-          "id": "3",
-          "name": "Tofo",
-          "price": 190000,
-          "quantity": 1
-        },
-        {
-          "id": "13",
-          "name": "greenmix",
-          "price": 360000,
-          "quantity": 1
-        }
-      ],
-      "status": "pending"
-    },
-    {
       "id": "T5ouBeHJBQQ",
       "userId": "xF2Y4lpv35c",
       "name": "علی",
@@ -416,30 +266,48 @@
       "status": "pending"
     },
     {
-      "id": "aDH5avBn308",
-      "userId": "xF2Y4lpv35c",
-      "name": "طاهره غلامیان",
-      "email": "ta.gholamian@gmail.com",
-      "phone": "09112335647",
-      "address": "رشت-استادسرا- خیابان سهیل دبیری- کوچه نشاط- ساختمان ارک- طبقه اول - واحد 1",
-      "paymentMethod": "online",
-      "totalPrice": 1560000,
-      "items": [
-        {
-          "id": "11",
-          "name": "orbita",
-          "price": 780000,
-          "quantity": 1
-        },
-        {
-          "id": "12",
-          "name": "avocado",
-          "price": 780000,
-          "quantity": 1
-        }
-      ],
-      "status": "pending"
-    }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+    "id": "ord-001",
+    "userId": "user-001",
+    "name": "علی رضایی",
+    "email": "ali@example.com",
+    "phone": "09121234567",
+    "address": "تهران، خیابان ولیعصر، پلاک ۱۲",
+    "paymentMethod": "online",
+    "status": "pending",
+    "items": [
+      {
+        "id": "pizza-1",
+        "name": "پیتزا مخصوص",
+        "price": 350000,
+        "quantity": 2
+      },
+      {
+        "id": "drink-1",
+        "name": "نوشابه",
+        "price": 50000,
+        "quantity": 1
+      }
+    ],
+    "totalPrice": 750000
+  },
+  {
+    "id": "ord-002",
+    "userId": "user-001",
+    "name": "سارا احمدی",
+    "email": "sara@example.com",
+    "phone": "09129876543",
+    "address": "مشهد، بلوار سجاد، پلاک ۸",
+    "paymentMethod": "cash",
+    "status": "completed",
+    "items": [
+      {
+        "id": "burger-1",
+        "name": "برگر کلاسیک",
+        "price": 280000,
+        "quantity": 1
+      }
+    ],
+    "totalPrice": 280000
+  }
+  ]
 }

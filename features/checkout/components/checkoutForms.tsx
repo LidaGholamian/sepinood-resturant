@@ -8,7 +8,7 @@ import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useCartStore } from "@/features/cart/store/cart.store";
-import { createOrderPayload, createOrder } from "@/features/orders";
+import { createOrderPayload} from "@/features/orders";
 import { CheckoutFormValues } from "../types/checkout.types";
 import { checkoutSchema } from "../schemas/checkout.schema";
 import { Button } from "@/shared/components/ui/button";
@@ -16,11 +16,12 @@ import { RadioGroup, RadioGroupItem } from "@/shared/components/ui/radio-group";
 import { Label } from "@/shared/components/ui/label";
 import { Textarea } from "@/shared/components/ui/textarea";
 import { Input } from "@/shared/components/ui/input";
+import { createOrder } from "@/features/orders/api";
 
 export function CheckoutForms() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  
+
   const router = useRouter();
   const { data: session } = useSession();
 
@@ -62,8 +63,7 @@ export function CheckoutForms() {
     });
 
     try {
-      const createdOrder = await createOrder(orderPayload);
-
+      await createOrder(orderPayload);
       clearCart();
       router.push("/order-success");
     } catch (error) {

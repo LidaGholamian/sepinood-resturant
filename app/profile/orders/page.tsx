@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
 import { Order } from "@/features/orders";
-import { getUserOrders } from "@/features/orders/api/orders.api";
+import { getUserOrders } from "@/features/orders/api";
 import { OrderCard } from "@/features/orders/components/order-card";
-import { Button } from "@/shared/components/ui/button";
+
 import {
   Pagination,
   PaginationContent,

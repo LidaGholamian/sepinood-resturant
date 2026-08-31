@@ -16,3 +16,8 @@ export const getUserOrders = async (
 
   return data;
 };
+
+export const getOrderById = async(orderId: string): Promise<Order> => {
+  const { data } = await apiClient.get<Order>(`/orders/${orderId}`)
+  return data;
+}
