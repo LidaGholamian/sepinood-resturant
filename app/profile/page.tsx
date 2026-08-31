@@ -1,6 +1,6 @@
 import Cart from "@/features/cart/components/cart";
-import { OrderSummary } from "@/features/cart/components/OrderSummary";
-import { ProfileNavigation } from "@/features/profile/components/ProfileNavigation";
+import { OrderSummary } from "@/features/cart/components/order-summary";
+import { ProfileNavigation } from "@/features/profile/components/profile-navigation";
 
 export default function ProfilePage() {
   return (

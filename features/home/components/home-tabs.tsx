@@ -5,7 +5,7 @@ import { useState } from "react";
 import { CartSummary } from "@/features/cart";
 import { RestaurantInfo } from "@/features/home/components/restaurant-info";
 import { CategoryTabs } from "@/features/menu/components/category-tabs";
-import { Menu } from "@/features/menu/components/Menu";
+import { Menu } from "@/features/menu/components/menu";
 import { useCategories } from "@/features/menu/hook/use-categories";
 import { cn } from "@/shared/lib/utils";
 

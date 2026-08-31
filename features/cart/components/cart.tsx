@@ -2,10 +2,10 @@
 
 import { useCartHydrated } from "../hooks/use-cart-hydrated";
 import { useCartStore } from "../store/cart.store";
-import { CartHeader } from "./CartHeader";
-import { CartItems } from "./CartItems";
-import { EmptyCart } from "./EmptyCart";
-import { OrderSummary } from "./OrderSummary";
+import { CartHeader } from "./cart-header";
+import { CartItems } from "./cart-items";
+import { EmptyCart } from "./empty-cart";
+import { OrderSummary } from "./order-summary";
 
 export default function Cart() {
   const items = useCartStore((state) => state.items);

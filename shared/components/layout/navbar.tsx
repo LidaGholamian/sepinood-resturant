@@ -11,7 +11,7 @@ import { navLinks } from "@/shared/components/layout/constants/nav-links";
 import { useMobileNav } from "@/shared/components/layout/hooks/use-mobile-nav";
 import { buttonVariants } from "@/shared/components/ui/button";
 
-import { UserMenu } from "@/features/auth/components/UserMenu";
+import { UserMenu } from "@/features/auth/components/user-menu";
 
 
 export function Navbar() {

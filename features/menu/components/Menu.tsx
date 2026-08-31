@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 
-import { MenuCard } from "@/features/menu/components/MenuCard";
+import { MenuCard } from "@/features/menu/components/menu-card";
 import { useMenu } from "@/features/menu/hook/use-menu";
 import type { MenuProps } from "@/features/menu/types/menu-props.types";
 

@@ -1,5 +1,5 @@
-export { Menu } from "./components/Menu";
-export { MenuCard } from "./components/MenuCard";
+export { Menu } from "./components/menu";
+export { MenuCard } from "./components/menu-card";
 export { CategoryTabs } from "./components/category-tabs";
 export { useMenu } from "./hook/use-menu";
 export { useCategories } from "./hook/use-categories";

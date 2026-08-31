@@ -6,11 +6,9 @@ import { Minus, Plus, Trash2 } from "lucide-react";
 import { Button } from "@/shared/components/ui/button";
 import { Card } from "@/shared/components/ui/card";
 import { useCartStore } from "../store/cart.store";
-import type { CartItemProps } from "../types/cart-item-props.types";
+import { formatPrice } from "@/features/orders/lib/format-price";
 
-function formatPrice(price: number) {
-  return `${price.toLocaleString("fa-IR")} تومان`;
-}
+import type { CartItemProps } from "../types/cart-item-props.types";
 
 export function CartItem({ item }: CartItemProps) {
   const increaseQuantity = useCartStore((state) => state.increaseQuantity);
@@ -55,16 +53,17 @@ export function CartItem({ item }: CartItemProps) {
               >
                 <Trash2 className="size-3.5" />
               </Button>
-            ): (
-            <Button
-              size="icon"
-              variant="ghost"
-              onClick={() => decreaseQuantity(item.id)}
-              className="size-8 rounded-sm border border-neutral-200"
-              aria-label="کاهش تعداد"
-            >
-              <Minus className="size-3.5" />
-            </Button> )}
+            ) : (
+              <Button
+                size="icon"
+                variant="ghost"
+                onClick={() => decreaseQuantity(item.id)}
+                className="size-8 rounded-sm border border-neutral-200"
+                aria-label="کاهش تعداد"
+              >
+                <Minus className="size-3.5" />
+              </Button>
+            )}
 
             <span className="w-8 text-center text-sm font-medium">
               {item.quantity}
