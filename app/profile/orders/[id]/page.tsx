@@ -1,13 +1,19 @@
 import { getOrderById } from "@/features/orders/api";
-import { ORDER_STATUS_LABELS, orderStatusClasses } from "@/features/orders/constants/order-status.constants";
+import {
+  ORDER_STATUS_LABELS,
+  orderStatusClasses,
+} from "@/features/orders/constants/order-status.constants";
 import OrderItems from "@/features/orders/components/order-items";
 
 import { Badge } from "@/shared/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/shared/components/ui/card";
-
-interface orderDetailsPageProps {
-  params: Promise<{ id: string }>;
-}
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/shared/components/ui/card";
+import OrderDetailsSummary from "@/features/orders/components/order-details-summary";
+import { orderDetailsPageProps } from "@/features/orders/types/order.types";
 
 export default async function OrderDetailsPage({
   params,
@@ -22,7 +28,7 @@ export default async function OrderDetailsPage({
           <CardTitle className="text-xl">جزئیات سفارش</CardTitle>
         </CardHeader>
 
-        <CardContent className="space-y-4">
+        <CardContent className="space-y-6">
           <div className="flex items-center justify-between">
             <span className="text-cream-100/70">وضعیت سفارش</span>
 
@@ -33,7 +39,9 @@ export default async function OrderDetailsPage({
 
           <OrderItems items={order.items} />
 
-          <div className="space-y-3 border-t border-cream-100/10 pt-4">
+          <OrderDetailsSummary order={order} />
+
+          <div className="space-y-3 border-t border-cream-100/10 pt-4 px-4">
             <div className="flex justify-between">
               <span className="text-cream-100/70">نام</span>
               <span>{order.name}</span>
@@ -42,20 +50,6 @@ export default async function OrderDetailsPage({
             <div className="flex justify-between">
               <span className="text-cream-100/70">تلفن</span>
               <span>{order.phone}</span>
-            </div>
-
-            <div className="flex justify-between">
-              <span className="text-cream-100/70">پرداخت</span>
-              <span>
-                {order.paymentMethod === "online" ? "آنلاین" : "نقدی"}
-              </span>
-            </div>
-
-            <div className="flex justify-between">
-              <span className="text-cream-100/70">مبلغ کل</span>
-              <span className="whitespace-nowrap">
-                {order.totalPrice.toLocaleString("fa-IR")} تومان
-              </span>
             </div>
 
             <div>

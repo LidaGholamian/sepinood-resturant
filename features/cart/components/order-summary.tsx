@@ -12,7 +12,7 @@ import {
 import { useCartStore } from "../store/cart.store";
 import { OrderSummaryProps } from "../types/orderSummary.types";
 import { useRouter } from "next/navigation";
-import { formatPrice } from "@/features/orders/lib/format-price";
+import { formatPrice } from "@/shared/lib/format-price";
 
 export function OrderSummary({ showCheckoutButton = true }: OrderSummaryProps) {
   const hasHydrated = useCartStore((state) => state._hasHydrated);

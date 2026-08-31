@@ -6,7 +6,7 @@ import { Minus, Plus, Trash2 } from "lucide-react";
 import { Button } from "@/shared/components/ui/button";
 import { Card } from "@/shared/components/ui/card";
 import { useCartStore } from "../store/cart.store";
-import { formatPrice } from "@/features/orders/lib/format-price";
+import { formatPrice } from "@/shared/lib/format-price";
 
 import type { CartItemProps } from "../types/cart-item-props.types";
 

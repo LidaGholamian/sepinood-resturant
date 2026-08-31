@@ -5,7 +5,7 @@ import {
   CardTitle,
 } from "@/shared/components/ui/card";
 import { OrderItemsProps } from "../types/order.types";
-import { formatPrice } from "../lib/format-price";
+import { formatPrice } from "../../../shared/lib/format-price";
 
 export default function OrderItems({ items }: OrderItemsProps) {
   return (

@@ -42,3 +42,11 @@ export type PaginatedOrders = {
 export interface OrderItemsProps {
   items: OrderItem[];
 }
+
+export interface OrderDetailsSummaryProps {
+  order: Order;
+}
+
+export interface orderDetailsPageProps {
+  params: Promise<{ id: string }>;
+}
