@@ -50,3 +50,7 @@ export interface OrderDetailsSummaryProps {
 export interface orderDetailsPageProps {
   params: Promise<{ id: string }>;
 }
+
+export interface OrderCustomerInfoProps {
+  order: Order;
+}

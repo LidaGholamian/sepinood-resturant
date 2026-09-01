@@ -14,6 +14,7 @@ import {
 } from "@/shared/components/ui/card";
 import OrderDetailsSummary from "@/features/orders/components/order-details-summary";
 import { orderDetailsPageProps } from "@/features/orders/types/order.types";
+import { OrderCustomerInfo } from "@/features/orders/components/order-customer-info";
 
 export default async function OrderDetailsPage({
   params,
@@ -41,7 +42,9 @@ export default async function OrderDetailsPage({
 
           <OrderDetailsSummary order={order} />
 
-          <div className="space-y-3 border-t border-cream-100/10 pt-4 px-4">
+          <OrderCustomerInfo order={order} />
+
+          {/* <div className="space-y-3 border-t border-cream-100/10 pt-4 px-4">
             <div className="flex justify-between">
               <span className="text-cream-100/70">نام</span>
               <span>{order.name}</span>
@@ -56,7 +59,7 @@ export default async function OrderDetailsPage({
               <span className="text-cream-100/70 block mb-1">آدرس</span>
               <p>{order.address}</p>
             </div>
-          </div>
+          </div> */}
         </CardContent>
       </Card>
     </div>
