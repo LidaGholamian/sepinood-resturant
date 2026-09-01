@@ -33,26 +33,6 @@ export function HomeHero() {
               دقیقه ثبت کنید.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 opacity-0 animate-[fadeIn_0.8s_ease_0.45s_forwards]">
-              <Link
-                href="/menu"
-                className={cn(
-                  buttonVariants({ size: "lg" }),
-                  "bg-forest-700 hover:bg-forest-800 text-cream-50 font-semibold rounded-lg px-8 py-4 shadow-xl shadow-black/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl",
-                )}
-              >
-                مشاهده منو
-              </Link>
-              <Link
-                href="/menu"
-                className={cn(
-                  buttonVariants({ variant: "outline", size: "lg" }),
-                  "bg-cream-100/80 border border-foreground/50 text-forest-600 font-semibold rounded-lg px-8 py-4 transition-all duration-300 hover:bg-hero-text hover:border-hero-text hover:-translate-y-0.5",
-                )}
-              >
-                سفارش آنلاین
-              </Link>
-            </div>
           </div>
         </div>
       </div>
