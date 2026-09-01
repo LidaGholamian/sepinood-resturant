@@ -57,8 +57,9 @@ export function HomeTabs() {
 
           {activeTab === "menu" ? (
             <div
+              id="menu"
               role="tabpanel"
-              className="space-y-6 rounded-b-xl rounded-t-xl bg-forest-700 p-4"
+              className="space-y-6 rounded-b-xl rounded-t-xl bg-forest-700 p-4 scroll-mt-100 md:scroll-mt-40 lg:scroll-mt-40"
             >
               {isPending ? (
                 <p className="text-sm text-ivory-50/80">

@@ -9,7 +9,7 @@ import { useSession } from "next-auth/react";
 import { cn } from "@/shared/lib/utils";
 import { navLinks } from "@/shared/components/layout/constants/nav-links";
 import { useMobileNav } from "@/shared/components/layout/hooks/use-mobile-nav";
-import { buttonVariants } from "@/shared/components/ui/button";
+import { Button, buttonVariants } from "@/shared/components/ui/button";
 
 import { UserMenu } from "@/features/auth/components/user-menu";
 
@@ -47,12 +47,6 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/cart"
-            className="text-sm font-medium text-primary-foreground/85 transition-colors hover:text-primary-foreground"
-          >
-            سبد خرید
-          </Link>
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
@@ -72,15 +66,19 @@ export function Navbar() {
             </Link>
           )}
 
-          <Link
-            href="/"
-            className={cn(
-              buttonVariants({ variant: "secondary", size: "lg" }),
-              "h-10 bg-ivory-50 px-4 text-forest-800 hover:bg-ivory-50/90",
-            )}
+          <Button
+            variant="secondary"
+            size="lg"
+            onClick={() => {
+              document.getElementById("menu")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+            className="h-10 bg-ivory-50 px-4 text-forest-800 hover:bg-ivory-50/90"
           >
             سفارش آنلاین
-          </Link>
+          </Button>
         </div>
 
         <button
@@ -125,18 +123,22 @@ export function Navbar() {
           </Link>
           <div className="flex items-center gap-2 md:hidden">
             {mounted && isAuthenticated && <UserMenu />}
-
           </div>
-          <Link
-            href="/"
-            className={cn(
-              buttonVariants({ variant: "secondary", size: "lg" }),
-              "mt-2 h-10 bg-ivory-50 text-forest-800 hover:bg-ivory-50/90",
-            )}
-            onClick={close}
+          <Button
+            variant="secondary"
+            size="lg"
+            onClick={() => {
+              document.getElementById("menu")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+
+              close();
+            }}
+            className="mt-2 h-10 bg-ivory-50 text-forest-800 hover:bg-ivory-50/90"
           >
             سفارش آنلاین
-          </Link>
+          </Button>
         </nav>
       </div>
     </header>
