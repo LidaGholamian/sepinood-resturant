@@ -23,45 +23,22 @@ export default async function OrderDetailsPage({
   const order = await getOrderById(id);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <Card className="bg-forest-700 border-none text-cream-100 w-full mx-auto max-w-xl">
-        <CardHeader>
-          <CardTitle className="text-xl">جزئیات سفارش</CardTitle>
-        </CardHeader>
+    <div className="container max-w-xl mx-auto my-2 px-4 py-8 border border-forest-700 rounded-lg bg-forest-700">
+      <div className="mx-auto max-w-xl space-y-6">
+        <div className="flex items-center justify-between">
+          <h1 className="text-xl font-semibold text-cream-100">جزئیات سفارش</h1>
 
-        <CardContent className="space-y-6">
-          <div className="flex items-center justify-between">
-            <span className="text-cream-100/70">وضعیت سفارش</span>
+          <Badge className={orderStatusClasses[order.status]}>
+            {ORDER_STATUS_LABELS[order.status]}
+          </Badge>
+        </div>
 
-            <Badge className={orderStatusClasses[order.status]}>
-              {ORDER_STATUS_LABELS[order.status]}
-            </Badge>
-          </div>
+        <OrderItems items={order.items} />
 
-          <OrderItems items={order.items} />
+        <OrderDetailsSummary order={order} />
 
-          <OrderDetailsSummary order={order} />
-
-          <OrderCustomerInfo order={order} />
-
-          {/* <div className="space-y-3 border-t border-cream-100/10 pt-4 px-4">
-            <div className="flex justify-between">
-              <span className="text-cream-100/70">نام</span>
-              <span>{order.name}</span>
-            </div>
-
-            <div className="flex justify-between">
-              <span className="text-cream-100/70">تلفن</span>
-              <span>{order.phone}</span>
-            </div>
-
-            <div>
-              <span className="text-cream-100/70 block mb-1">آدرس</span>
-              <p>{order.address}</p>
-            </div>
-          </div> */}
-        </CardContent>
-      </Card>
+        <OrderCustomerInfo order={order} />
+      </div>
     </div>
   );
 }
