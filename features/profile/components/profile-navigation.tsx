@@ -1,5 +1,6 @@
 import { UserRound } from "lucide-react";
 import { iconMap, profileNavigation } from "../constants/profile-navigation";
+import Link from "next/link";
 
 export function ProfileNavigation() {
   return (
@@ -19,6 +20,19 @@ export function ProfileNavigation() {
       <nav className="space-y-1 border-t border-cream-100/10 pt-3">
         {profileNavigation.map((item) => {
           const Icon = iconMap[item];
+
+          if (item === "سفارش های من") {
+            return (
+              <Link
+                key={item}
+                href="/profile/orders"
+                className="flex w-full items-center gap-3 rounded-lg px-3 py-3 text-right text-sm font-medium text-cream-100/75 transition-colors hover:bg-forest-700/60 hover:text-cream-100"
+              >
+                {" "}
+                <Icon className="size-4 shrink-0" /> <span>{item}</span>{" "}
+              </Link>
+            );
+          }
 
           return (
             <button

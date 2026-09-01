@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, User, LogOut, ShoppingCart } from "lucide-react";
+import { ChevronDown, User, LogOut, ShoppingCart, ShoppingBag } from "lucide-react";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -38,7 +38,7 @@ export function UserMenu() {
 
       <DropdownMenuContent
         align="end"
-        className="w-56 bg-forest-900 text-cream-100"
+        className="w-56 bg-forest-900 text-cream-100 gap-2"
       >
         <div className="px-3 py-2">
           <p className="font-semibold">{session.user.name}</p>
@@ -55,6 +55,11 @@ export function UserMenu() {
         <DropdownMenuItem onClick={() => router.push("/profile")}>
           <User className="size-4" />
           حساب کاربری
+        </DropdownMenuItem>
+
+        <DropdownMenuItem onClick={() => router.push("/profile/orders")}>
+          {" "}
+          <ShoppingBag className="size-4" /> سفارش های من{" "}
         </DropdownMenuItem>
 
         <DropdownMenuItem onClick={() => router.push("/cart")}>
