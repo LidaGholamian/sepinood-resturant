@@ -24,8 +24,8 @@
   "menuItems": [
     {
       "id": "1",
-      "name": "BB Burger",
-      "description": "برگر گیاهی باربیکیو با سس مخصوص و سبزیجات تازه",
+      "name": "برگر باربیکیو",
+      "description": "برگر گیاهی باربیکیو با سس مخصوص",
       "price": 250000,
       "image": "/images/food/bb-burger.webp",
       "categoryId": "1",
@@ -39,7 +39,7 @@
     },
     {
       "id": "2",
-      "name": "vegan salami",
+      "name": "سالامی سبزیجات",
       "description": "ساندویچ وگان سالامی",
       "price": 180000,
       "image": "/images/food/salami.webp",
@@ -53,7 +53,7 @@
     },
     {
       "id": "3",
-      "name": "Tofo",
+      "name": "توفو",
       "description": "ساندویچ توفو گریل با قارچ",
       "price": 190000,
       "image": "/images/food/tofo.webp",
@@ -67,7 +67,7 @@
     },
     {
       "id": "4",
-      "name": "sosis",
+      "name": "سوسیس گیاهی",
       "description": "ساندویچ سوسیس وگان",
       "price": 150000,
       "image": "/images/food/sosis.webp",
@@ -81,7 +81,7 @@
     },
     {
       "id": "5",
-      "name": "american pizza",
+      "name": "پیتزا آمریکایی",
       "description": "پیتزا سبزیجات امریکایی",
       "price": 650000,
       "image": "/images/food/american.webp",
@@ -95,7 +95,7 @@
     },
     {
       "id": "6",
-      "name": "american peperoni",
+      "name": "پپرونی آمریکایی",
       "description": "پیتزا پپرونی امریکایی",
       "price": 650000,
       "image": "/images/food/peperoni.webp",
@@ -109,7 +109,7 @@
     },
     {
       "id": "7",
-      "name": "italian",
+      "name": "پپرونی ایتالیایی",
       "description": "پیتزا پپرونی ایتالیایی",
       "price": 850000,
       "image": "/images/food/italian.webp",
@@ -123,7 +123,7 @@
     },
     {
       "id": "8",
-      "name": "special",
+      "name": "مخصوص ایتالیایی",
       "description": "پیتزا مخصوص ایتالیایی",
       "price": 980000,
       "image": "/images/food/special.webp",
@@ -137,7 +137,7 @@
     },
     {
       "id": "9",
-      "name": "alferedo",
+      "name": "آلفردو",
       "description": "پاستا آلفردو",
       "price": 580000,
       "image": "/images/food/alferedo.webp",
@@ -151,7 +151,7 @@
     },
     {
       "id": "10",
-      "name": "marita",
+      "name": "پاستا ماریتا",
       "description": "پاستا ماریتا",
       "price": 620000,
       "image": "/images/food/marita.webp",
@@ -165,7 +165,7 @@
     },
     {
       "id": "11",
-      "name": "orbita",
+      "name": "پاستا اربیتا",
       "description": "پاستا اربیتا",
       "price": 780000,
       "image": "/images/food/orbita.webp",
@@ -179,7 +179,7 @@
     },
     {
       "id": "12",
-      "name": "avocado",
+      "name": "سالاد آواکادو",
       "description": "سالاد آواکادو",
       "price": 780000,
       "image": "/images/food/avocado.webp",
@@ -193,7 +193,7 @@
     },
     {
       "id": "13",
-      "name": "greenmix",
+      "name": "سلاد گرین میکس",
       "description": "سالاد گرین میکس",
       "price": 360000,
       "image": "/images/food/greenmix.webp",
@@ -207,7 +207,7 @@
     },
     {
       "id": "14",
-      "name": "killsezar",
+      "name": "کیل سزار",
       "description": "سالاد کیل سزار",
       "price": 780000,
       "image": "/images/food/killsezar.webp",
