@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sepinood 🍽️
 
-## Getting Started
+A modern restaurant ordering web application built with **Next.js, TypeScript, and feature-based architecture**.
 
-First, run the development server:
+Sepinood is a portfolio project focused on building a realistic food ordering experience with authentication, cart management, checkout, and order management.
+
+## ✨ Features
+
+* 🔐 User authentication with **NextAuth**
+* 🍽️ Restaurant menu and category browsing
+* 🛒 Shopping cart with **Zustand**
+* 💾 Persistent cart state with Zustand Persist
+* 💳 Checkout flow with payment method selection
+* 📝 Form handling with **React Hook Form**
+* ✅ Form validation with **Zod**
+* 📦 User orders with:
+
+  * Orders list
+  * Pagination
+  * Order details
+  * Order status
+* 📱 Responsive design
+* 🎨 UI built with **Tailwind CSS** and **shadcn/ui**
+* ⚡ Performance optimization with image compression and WebP
+* 🌐 REST API using **JSON Server**
+
+## 🛠️ Tech Stack
+
+* **Next.js**
+* **TypeScript**
+* **Tailwind CSS**
+* **shadcn/ui**
+* **Zustand**
+* **NextAuth**
+* **React Hook Form**
+* **Zod**
+* **Axios**
+* **JSON Server**
+* **Lucide React**
+
+## 🏗️ Architecture
+
+The project follows a **feature-based architecture**, keeping components, API logic, types, and related functionality organized by feature.
+
+```text
+features/
+├── auth/
+├── cart/
+├── checkout/
+├── orders/
+└── ...
+```
+
+This structure helps keep the project maintainable and makes it easier to scale individual features independently.
+
+## 📦 Main Features
+
+### Cart
+
+The cart is managed with Zustand and uses persistence to keep cart items available across page refreshes.
+
+### Checkout
+
+The checkout form uses React Hook Form together with Zod for type-safe form validation.
+
+### Orders
+
+Users can view their orders, navigate through paginated results, and open an individual order to see its details and current status.
+
+## ⚡ Performance
+
+The project also includes basic performance optimization.
+
+The main hero image was converted from PNG to WebP, significantly reducing its file size and improving loading performance.
+
+### Lighthouse
+
+Latest local Lighthouse results measured in Chrome Incognito:
+
+| Metric         | Mobile | Desktop |
+| -------------- | -----: | ------: |
+| Performance    |     72 |      68 |
+| Accessibility  |      — |      92 |
+| Best Practices |      — |     100 |
+| SEO            |      — |     100 |
+| FCP            |   1.2s |    0.6s |
+| LCP            |   1.8s |    1.2s |
+| TBT            |  1.95s |   0.45s |
+| CLS            |  0.003 |       0 |
+
+The results are based on a production build running locally.
+
+## 🚀 Getting Started
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Run the JSON Server API
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+In a separate terminal:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run api
+```
 
-## Learn More
+The API runs on:
 
-To learn more about Next.js, take a look at the following resources:
+```text
+http://localhost:3001
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The Next.js application runs on:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+http://localhost:3000
+```
 
-## Deploy on Vercel
+### 4. Production build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To create and test a production build:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm run start
+```
+
+## 📌 Project Status
+
+**Completed — Portfolio Project**
+
+## 📄 License
+
+This project was created as a personal portfolio project.
